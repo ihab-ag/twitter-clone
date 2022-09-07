@@ -1,0 +1,103 @@
+/* Reset padding and presets */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Font import */
+@font-face {
+    font-family: "TheChirp"; src:url(../assets/fonts/chirp-extended-heavy-web.woff) format("woff");
+}
+.chirp{
+    font-family: "TheChirp";
+}
+
+/* Login Form */
+.login-container{
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+.login-overlay{
+    width: 54%;
+    height: 733px;
+}
+
+.login-overlay-image{
+    width: 100%;
+    height: 100%;
+    background: url(../assets/images/login-form-background.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.login-form-div{
+    display: flex;
+    width: 46%;
+    height: auto;
+    padding: 15px 15px 15px 15px;
+}
+
+.login-form{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 20px 15px 15px 15px;
+}
+
+.login-form-heading{
+    width: 100%;
+    line-height: 80px;
+    font-size: 61px;
+    margin-bottom: 46px;
+    margin-top: 46px;
+}
+
+.login-form-subheading{
+    width: 100%;
+    line-height: 43px;
+    font-size: 29px;
+    padding-bottom: 15px;
+    font-weight: 700;
+}
+
+.login-form-buttons{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 517px;
+    height: 340px;
+}
+
+.signup-terms{
+    font-size: 14px;
+    line-height: 13px;
+    margin-top: 19px;
+    color: rgb(83, 100, 113);
+    font-weight: 400;
+    width:300px;
+}
+
+.login-form-login{
+    margin-top: 38px;
+}
+
+.login-from-login-text{
+    padding-bottom: 20px;
+}
+
+.login-form-or{
+    text-align: center;
+    margin: 5px 0;
+    width: 50%
+}
+
+.login-form-btn{
+    display: flex;
+    height: 17%;
+    width: 300px;
+    padding: 20px;
+}
