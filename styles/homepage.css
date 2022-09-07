@@ -3,3 +3,19 @@
     margin:0;
     padding:0;
 }
+/* utilities */
+.flex-column{
+    display:flex;
+    flex-direction:column;
+}
+.flex-row{
+    display:flex;
+    flex-direction:row;
+}
+/* nav menu*/
+.nav{
+    align-items: center;
+    justify-content: space-between;
+    width:25%;
+    height: 100vh;
+}
