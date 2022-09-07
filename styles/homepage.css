@@ -64,3 +64,15 @@ img{
 .nav-btn{
     padding: 7px 55px;
 }
+.nav-profilecard{
+    align-items: center;
+}
+.nav-profilecard > div:first-child{
+    background: url('../content/abstract-mood-series-website-background-color-images-high-resolution-abstract-mood-backgrounds-images-designed-use-websites-157859506.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:42px;
+    height:42px;
+    border-radius: 50px;
+}
