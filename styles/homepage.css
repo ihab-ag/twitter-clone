@@ -17,37 +17,50 @@ img{
     display:flex;
     flex-direction:row;
 }
+.btn{
+    border: none;
+    border-radius: 100px;
+    background: #03a9f4;
+    color: white;
+    font-weight: bold;
+    font-size: 21px;
+}
 /* nav menu*/
 .nav{
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     width:15vw;
     height: 100vh;
-    padding: 15px 30px 15px 0;
+    padding: 15px 30px 20px 25px;
 }
 .nav-links{
     justify-content: space-between;
     align-items: flex-start;
+    height:35vh;
 }
 .nav-links > li{
     list-style: none;
     width:100%;
-    align-items: flex-start;
-    justify-content: space-between;
+    align-items: center;
     padding-top: 10px;
-    padding-left: 3px;
-    font-size: 12px;
-    width:55px;
+    padding-left: 8px;
+    font-size: 25px;
 }
 .nav-links>li:first-child{
     padding-top: 0px;
     padding-left: 0px;
 }
+.nav-links >li > p{
+    padding-left: 15px;
+}
 .nav-icon{
-    height:12px;
-    width:12px;
+    height: 30px;
+    width: 30px;
 }
 .nav-img{
-    width:22px;
-    height:22px
+    width: 50px;
+    height: 50px;
+}
+.nav-btn{
+    padding: 7px 55px;
 }
