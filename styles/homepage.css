@@ -20,7 +20,7 @@ img{
 .nav{
     align-items: center;
     justify-content: space-between;
-    width:25%;
+    width:15vw;
     height: 100vh;
     padding: 15px 30px;
 }
@@ -30,16 +30,24 @@ img{
 }
 .nav-links > li{
     list-style: none;
-    align-items: center;
-    justify-content: start;
+    width:100%;
+    align-items: flex-start;
+    justify-content: space-between;
     padding-top: 10px;
-    padding-left: 5px;
+    padding-left: 3px;
+    font-family: sans-serif;
+    font-size: 12px;
+    width:55px;
 }
 .nav-links>li:first-child{
     padding-top: 0px;
     padding-left: 0px;
 }
 .nav-icon{
-    height:32px;
-    width:32px;
+    height:12px;
+    width:12px;
+}
+.nav-img{
+    width:22px;
+    height:22px
 }
