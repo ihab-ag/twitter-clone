@@ -2,6 +2,7 @@
 	box-sizing: border-box;
     margin:0;
     padding:0;
+    font-family: sans-serif;
 }
 img{
     height:100%;
@@ -22,7 +23,7 @@ img{
     justify-content: space-between;
     width:15vw;
     height: 100vh;
-    padding: 15px 30px;
+    padding: 15px 30px 15px 0;
 }
 .nav-links{
     justify-content: space-between;
@@ -35,7 +36,6 @@ img{
     justify-content: space-between;
     padding-top: 10px;
     padding-left: 3px;
-    font-family: sans-serif;
     font-size: 12px;
     width:55px;
 }
