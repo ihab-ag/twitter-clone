@@ -67,6 +67,9 @@ img{
     height:52px;
 }
 /* main */
+.main{
+    flex-grow: 1;
+}
 /* Home */
 .tweet-section{
     display: flex;
