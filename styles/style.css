@@ -162,7 +162,7 @@ img{
 .profile__bg img{
     height:100%;
 }
-.profile-icon{
+.profile .profile-icon{
     width: 90px;
     height: 90px;
     transform: translate(20%, -50%);
