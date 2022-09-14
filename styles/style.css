@@ -35,7 +35,7 @@ img{
 /* menu */
 .nav-bar{
     height: 100vh;
-    width: min(22vw,75px);
+    width: min(25%,120px);
     border-right: solid 1px black;
 }
 .nav-bar > .container{
