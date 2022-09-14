@@ -94,9 +94,15 @@ img{
     padding:18%;
 }
 /* profile card */
+.nav-card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
 .nav-card .profile-icon{
-    width:52px;
-    height:52px;
+    width:48px;
+    height:48px;
 }
 /* Home */
 .home{
