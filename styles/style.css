@@ -9,4 +9,6 @@ img{
 /* nav bar */
 .nav-bar{
     height: 100vh;
+    width:25vw;
+    border-right: solid 1px black;
 }
