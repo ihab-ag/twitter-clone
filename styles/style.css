@@ -97,6 +97,11 @@ img{
     flex-grow: 1;
 }
 /* Home */
+.home{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 .tweet-section{
     display: flex;
     flex-direction: row;
