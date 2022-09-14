@@ -79,8 +79,10 @@ img{
 .tweet-section > div{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    gap:10px;
 }
 .tweet-section .profile-icon{
-    width:60px;
-    height:60px;
+    width:56px;
+    height:56px;
 }
