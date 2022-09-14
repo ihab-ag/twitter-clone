@@ -66,4 +66,13 @@ img{
     width:52px;
     height:52px;
 }
-
+/* main */
+/* Home */
+.tweet-section{
+    display: flex;
+    flex-direction: row;
+}
+.tweet-section > div{
+    display: flex;
+    flex-direction: row;
+}
