@@ -176,9 +176,14 @@ img{
 }
 .profile .container:last-child{
     padding-top: 45px;
+    padding-bottom: 0;
 }
 .follow-counter{
     display: flex;
     flex-direction: row;
     gap: 15px;
+}
+.underline{
+    border-bottom: #179cf0 solid;
+    transform: translateY(2px);
 }
