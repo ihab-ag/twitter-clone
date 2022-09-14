@@ -71,6 +71,7 @@ img{
 .tweet-section{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 .tweet-section > div{
     display: flex;
