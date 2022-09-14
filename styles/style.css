@@ -16,3 +16,9 @@ img{
     width:22vw;
     border-right: solid 1px black;
 }
+.nav-bar > .container{
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
