@@ -30,6 +30,12 @@ img{
 .small{
     font-size: 12px;
 }
+.light-blue{
+    color: #5eb2e6;
+}
+.light-grey{
+    color:#666666;
+}
 .container{
     padding:20px;
 }
@@ -60,7 +66,7 @@ img{
 /* menu */
 .nav-bar{
     height: 100vh;
-    width: min(25%,120px);
+    width: 20%;
     border-right: solid 1px black;
 }
 .nav-bar > .container{
