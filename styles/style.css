@@ -143,6 +143,12 @@ img{
     border-bottom: 1px solid black;
     flex-grow: 1;
 }
+.profile .large{
+    font-size: 22px;
+}
+.profile .medium{
+    font-size: 14px;
+}
 .profile > .container{
     display: flex;
     flex-direction: column;
