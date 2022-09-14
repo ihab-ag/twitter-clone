@@ -9,7 +9,7 @@ img{
 }
 /* utilities */
 .container{
-    padding:20%;
+    padding:20px;
 }
 .desktop{
     display:none;
