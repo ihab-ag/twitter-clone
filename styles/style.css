@@ -177,3 +177,8 @@ img{
 .profile .container:last-child{
     padding-top: 45px;
 }
+.follow-counter{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
