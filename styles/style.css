@@ -25,6 +25,12 @@ img{
     object-fit: cover;
     border-radius: 50%;
 }
+/* layout */
+.layout{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
 /* nav bar */
 /* menu */
 .nav-bar{
