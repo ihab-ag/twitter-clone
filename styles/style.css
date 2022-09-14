@@ -24,6 +24,7 @@ img{
     display:flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 }
 .nav-bar li{
     list-style: none;
