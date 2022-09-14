@@ -6,9 +6,11 @@
 img{
     width: 100%;
 }
+/* utilities */
+
 /* nav bar */
 .nav-bar{
     height: 100vh;
-    width:25vw;
+    width:22vw;
     border-right: solid 1px black;
 }
