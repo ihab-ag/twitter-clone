@@ -92,17 +92,14 @@ img{
     width:52px;
     height:52px;
 }
-/* main */
-.main{
-    flex-grow: 1;
-    border-bottom: 1px solid black;
-    height: fit-content;
-}
 /* Home */
 .home{
     display: flex;
     flex-direction: column;
     gap: 15px;
+    flex-grow: 1;
+    border-bottom: 1px solid black;
+    height: fit-content;
 }
 .tweet-section{
     display: flex;
