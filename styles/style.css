@@ -20,6 +20,11 @@ img{
     border-radius: 50px;
     padding:18%;
 }
+.profile-icon img{
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
 /* nav bar */
 /* menu */
 .nav-bar{
@@ -51,12 +56,8 @@ img{
     height: 38px;
 }
 /* profile card */
-.nav__profile-icon{
+.nav-card .profile-icon{
     width:52px;
     height:52px;
 }
-.nav__profile-icon img{
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-}
+
