@@ -24,7 +24,7 @@ img{
 /* menu */
 .nav-bar{
     height: 100vh;
-    width:22vw;
+    width: min(22vw,75px);
     border-right: solid 1px black;
 }
 .nav-bar > .container{
