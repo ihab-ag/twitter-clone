@@ -22,7 +22,8 @@ img{
     font-weight: 100;
 }
 .large{
-    font-size: 26px;
+    letter-spacing: -1px;
+    font-size: 22px;
 }
 .medium{
     font-size:16px;
@@ -106,7 +107,7 @@ img{
 }
 /* Home */
 .home{
-    display:none;
+    /* display:none; */
     height: fit-content;
     border-bottom: 1px solid black;
     flex-grow: 1;
@@ -139,12 +140,12 @@ img{
 }
 /* profile */
 .profile{
+    display:none;
     height: fit-content;
     border-bottom: 1px solid black;
     flex-grow: 1;
 }
 .profile .large{
-    letter-spacing: -1px;
     font-size: 18px;
 }
 .profile .medium{
