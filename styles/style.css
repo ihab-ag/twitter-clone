@@ -68,6 +68,7 @@ img{
 .nav-bar{
     height: 100vh;
     width: 20%;
+    position: fixed;
     border-right: solid 1px black;
 }
 .nav-bar > .container{
@@ -105,12 +106,18 @@ img{
     width:48px;
     height:48px;
 }
+/* main */
+.main{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    padding-left: 20%;
+}
 /* Home */
 .home{
     /* display:none; */
     height: fit-content;
     border-bottom: 1px solid black;
-    flex-grow: 1;
 }
 .home > .container{
     display: flex;
@@ -143,7 +150,6 @@ img{
     display:none;
     height: fit-content;
     border-bottom: 1px solid black;
-    flex-grow: 1;
 }
 .profile .large{
     font-size: 18px;
