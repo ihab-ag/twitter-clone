@@ -95,6 +95,7 @@ img{
 /* main */
 .main{
     flex-grow: 1;
+    border-bottom: 1px solid black;
 }
 /* Home */
 .home{
@@ -119,6 +120,6 @@ img{
     height: 52px;
 }
 .tweet-section .btn{
-    width:100px;
+    width:min(30%,100px);
     height:35px
 }
