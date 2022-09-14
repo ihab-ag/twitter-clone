@@ -94,12 +94,14 @@ img{
 }
 /* Home */
 .home{
+    height: fit-content;
+    border-bottom: 1px solid black;
+    flex-grow: 1;
+}
+.home > .container{
     display: flex;
     flex-direction: column;
     gap: 15px;
-    flex-grow: 1;
-    border-bottom: 1px solid black;
-    height: fit-content;
 }
 .tweet-section{
     display: flex;
