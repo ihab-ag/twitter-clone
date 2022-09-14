@@ -28,3 +28,6 @@ img{
 .nav-bar li{
     list-style: none;
 }
+.nav__icon{
+    width:40px;
+}
