@@ -258,6 +258,7 @@ img{
     align-items: center;
 }
 .input input{
+    flex-grow: 1;
     height:35px;
     background: transparent;
     border: none;
