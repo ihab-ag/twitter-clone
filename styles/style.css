@@ -248,6 +248,12 @@ img{
     width:auto;
     height:65%;
 }
+.input{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 .input input{
     height:35px;
     background: transparent;
