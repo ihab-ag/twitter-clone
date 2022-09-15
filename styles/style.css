@@ -207,6 +207,8 @@ img{
     display:flex;
     flex-direction: row;
     justify-content: start;
+    align-items: center;
+    gap:5px;
 }
 .tweet__content .profile-icon{
     width:48px;
