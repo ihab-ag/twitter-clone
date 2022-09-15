@@ -196,3 +196,9 @@ img{
     border-bottom: #179cf0 solid;
     transform: translateY(2px);
 }
+/* tweet */
+.tweet{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
