@@ -366,3 +366,20 @@ input:focus{
         display:flex;
     }
 }
+@media screen and (min-width:800px) {
+    /* utilities */
+    .desktop{
+        display: contents;
+    }
+    .tablet{
+        display: none;
+    }
+    /* nav-bar */
+    .nav-bar{
+        width:20%;
+    }
+    /* main */
+    .main{
+        padding-left: 20%;
+    }
+}
