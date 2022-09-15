@@ -290,7 +290,21 @@ img{
     align-items: center;
     border-radius: 0 0 10px 10px;
 }
+/* search bar */
+.search-bar{
+    display:none;
+}
 /* media queries */
 @media screen and (min-width:650px) {
+    /* search bar */
+.search-bar{
+    border-left: solid 1px;
+    height: 100vh;
+    width:35%;
+    display: flex;
+    flex-direction: column;
+}
+.search{
     
+}
 }
