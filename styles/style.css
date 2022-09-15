@@ -122,7 +122,7 @@ input:focus{
 }
 /* Home */
 .home{
-    /* display:none; */
+    display:none;
     height: fit-content;
     border-bottom: 1px solid black;
 }
@@ -154,15 +154,21 @@ input:focus{
 }
 /* profile */
 .profile{
-    display:none;
+    /* display:none; */
     height: fit-content;
     border-bottom: 1px solid black;
 }
 .profile .large{
-    font-size: 18px;
+    font-size: 20px;
 }
 .profile .medium{
-    font-size: 14px;
+    font-size: 18px;
+}
+.profile .small{
+    font-size: 16px;
+}
+.profile p{
+    font-size: 18px;
 }
 .profile > .container{
     display: flex;
@@ -340,9 +346,16 @@ input:focus{
     .mobile{
         display: none;
     }
+    /* profile */
+    .profile__bg {
+        height: 26vw;
+    }
     /* nav */
     .nav-bar{
         width:15%;
+    }
+    .nav-bar ul{
+        gap:25px;
     }
     /* main */
     .main{
