@@ -48,6 +48,7 @@ img{
     background-color: #179cf0;
     border-radius: 50px;
     color:white;
+    cursor: pointer;
 }
 .disabled{
     background-color: #60bbf3;
@@ -118,7 +119,7 @@ img{
 }
 /* Home */
 .home{
-    /* display:none; */
+    display:none;
     height: fit-content;
     border-bottom: 1px solid black;
 }
