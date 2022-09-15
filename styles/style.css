@@ -249,10 +249,16 @@ img{
     height:65%;
 }
 .tweet-box__input{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
     background-color: white;
+    flex-grow: 1;
 }
 .input{
     display: flex;
+    width:100%;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
