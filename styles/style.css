@@ -242,11 +242,14 @@ img{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: #f6f6f6;
 }
 .tweet-box__head img{
     width:auto;
     height:65%;
+}
+.tweet-box__input{
+    background-color: white;
 }
 .input{
     display: flex;
