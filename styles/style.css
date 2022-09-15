@@ -235,10 +235,9 @@ img{
     flex-direction: column;
     width:80vw;
     border:1px solid;
-    height: 40vh;
 }
 .tweet-box__head{
-    height: 6.5vh;
+    height: 7.5vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -254,7 +253,7 @@ img{
     align-items: flex-end;
     justify-content: space-between;
     background-color: white;
-    flex-grow: 1;
+    height: 30vw;
 }
 .input{
     display: flex;
@@ -278,4 +277,13 @@ img{
 .img-input img{
     height:90%;
     width:auto;
+}
+.tweet-btn{
+    height: 7.5vw;
+    background-color: #179cf0;
+    color:white;
+    font-size:18px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
