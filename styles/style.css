@@ -206,20 +206,22 @@ img{
     justify-content: space-between;
     align-items: center;
     gap:10px;
+    border-bottom: 1px solid black;
 }
 .tweet__content{
     display:flex;
     flex-direction: row;
     justify-content: start;
-    align-items: center;
-    gap:5px;
+    align-items: flex-start;
+    gap:10px;
 }
 .tweet__content .profile-icon{
     width:48px;
     height: 48px;
 }
 .like-icon{
-    width:28px;
-    height: 28px;
+    width:26px;
+    height: 26px;
     cursor:pointer;
+    flex-shrink: 0;
 }
