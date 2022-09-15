@@ -248,3 +248,13 @@ img{
     width:auto;
     height:65%;
 }
+.img-input{
+    height:35px;
+    border: none;
+    background: transparent;
+
+}
+.img-input img{
+    height:90%;
+    width:auto;
+}
