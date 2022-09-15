@@ -234,7 +234,7 @@ img{
     display:flex;
     flex-direction: column;
     width:80vw;
-    border:1px solid;
+    display: none;
 }
 .tweet-box__head{
     height: 7.5vw;
@@ -242,6 +242,7 @@ img{
     justify-content: center;
     align-items: center;
     background-color: #f6f6f6;
+    border-radius: 10px 10px 0 0;
 }
 .tweet-box__head img{
     width:auto;
@@ -253,7 +254,7 @@ img{
     align-items: flex-end;
     justify-content: space-between;
     background-color: white;
-    height: 30vw;
+    height: 35vw;
 }
 .input{
     display: flex;
@@ -286,4 +287,5 @@ img{
     display:flex;
     justify-content: center;
     align-items: center;
+    border-radius: 0 0 10px 10px;
 }
