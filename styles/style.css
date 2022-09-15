@@ -206,4 +206,5 @@ img{
 .tweet__content{
     display:flex;
     flex-direction: row;
+    justify-content: start;
 }
