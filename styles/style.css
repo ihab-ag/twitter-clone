@@ -114,12 +114,12 @@ img{
 .main{
     display: flex;
     flex-direction: column;
-    width:100%;
+    width:min(100%,550px);
     padding-left: 20%;
 }
 /* Home */
 .home{
-    display:none;
+    /* display:none; */
     height: fit-content;
     border-bottom: 1px solid black;
 }
@@ -290,3 +290,4 @@ img{
     align-items: center;
     border-radius: 0 0 10px 10px;
 }
+/* media queries */
