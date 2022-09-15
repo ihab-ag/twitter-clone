@@ -202,3 +202,7 @@ img{
     flex-direction: row;
     justify-content: space-between;
 }
+.tweet__content{
+    display:flex;
+    flex-direction: row;
+}
