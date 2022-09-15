@@ -248,11 +248,16 @@ img{
     width:auto;
     height:65%;
 }
+.input input{
+    height:35px;
+    background: transparent;
+    border: none;
+    font-size: 18px;
+}
 .img-input{
     height:35px;
     border: none;
     background: transparent;
-
 }
 .img-input img{
     height:90%;
