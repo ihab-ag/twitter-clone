@@ -52,6 +52,9 @@ img{
 .disabled{
     background-color: #60bbf3;
 }
+.profile-icon{
+    flex-shrink: 0;
+}
 .profile-icon img{
     height: 100%;
     object-fit: cover;
@@ -202,6 +205,7 @@ img{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap:10px;
 }
 .tweet__content{
     display:flex;
