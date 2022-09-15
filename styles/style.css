@@ -297,7 +297,7 @@ input:focus{
     .search-bar{
         border-left: solid 1px;
         height: 100vh;
-        width:30%;
+        width:35%;
         display: flex;
         flex-direction: column;
         gap:15px;
@@ -336,8 +336,20 @@ input:focus{
     }
 /* media queries */
 @media screen and (min-width:650px) {
-/* search bar */
-.search-bar{
-    display:flex;
-}
+    /* utelities */
+    .mobile{
+        display: none;
+    }
+    /* nav */
+    .nav-bar{
+        width:15%;
+    }
+    /* main */
+    .main{
+        padding-left: 15%;
+    }
+    /* search bar */
+    .search-bar{
+        display:flex;
+    }
 }
