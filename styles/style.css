@@ -212,3 +212,8 @@ img{
     width:48px;
     height: 48px;
 }
+.like-icon{
+    width:28px;
+    height: 28px;
+    cursor:pointer;
+}
