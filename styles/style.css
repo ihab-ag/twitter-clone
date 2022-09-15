@@ -230,4 +230,13 @@ img{
     position:absolute;
     display:flex;
     flex-direction: column;
+    width:80vw;
+    border:1px solid;
+}
+.tweet-box__head{
+    height: 5vh;
+}
+.tweet-box__head img{
+    width:auto;
+    height:100%;
 }
