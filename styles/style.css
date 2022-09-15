@@ -114,7 +114,7 @@ img{
 .main{
     display: flex;
     flex-direction: column;
-    width:min(100%,550px);
+    width: min(100%,575px);
     padding-left: 20%;
 }
 /* Home */
