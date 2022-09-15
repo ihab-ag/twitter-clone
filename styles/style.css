@@ -225,3 +225,9 @@ img{
     cursor:pointer;
     flex-shrink: 0;
 }
+/* tweet box */
+.tweet-box{
+    position:absolute;
+    display:flex;
+    flex-direction: column;
+}
