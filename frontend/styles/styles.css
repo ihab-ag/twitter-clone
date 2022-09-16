@@ -26,14 +26,41 @@ body {
 
 .image {
     height: 100%;
-    background: url('./assets/images/login-form-background.png') center center/cover;
+    background: url('../content/images/login-form-background.png') center center/cover;
     flex: 0 1 53vw;
     position: relative;
 }
 
 .content {
     display: flex;
+    padding-left: 10px;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-evenly;
+}
+
+.big-bird {
+    width: 16rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: #fff;
+}
+
+.small-bird {
+    width: 3.5rem;
+    fill: #1da1f2;
+}
+
+.smaller-bird {
+    width: 2rem;
+    fill: #1da1f2;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+h1, h3 {
+    color: #0f1419;
+    font-weight: 900;
 }
