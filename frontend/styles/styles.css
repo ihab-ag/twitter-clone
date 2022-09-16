@@ -219,5 +219,18 @@ h3 {
         margin-right: 1rem;
     }
 
+    h1 {
+        font-size: 8vw;
+    }
+    .login-popup-container{
+        padding: 20vh 5vw;
+    }
 
+    .image {
+        height: 25vh;
+    }
+
+    .big-bird {
+        width:10%;
+    }
 }
