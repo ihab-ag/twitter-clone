@@ -60,6 +60,29 @@ body {
     margin-top: 10px;
 }
 
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24rem;
+    height: 3.3rem;
+    border-radius: 10vw;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.btn-signup {
+    background: #1da1f2;
+    color: #fff;
+    transition: all .2s ease;
+    margin-bottom: 20px;
+}
+
+.btn-signup:hover {
+    background: #1f94dd;
+}
+
 
 
 /* Footer */
