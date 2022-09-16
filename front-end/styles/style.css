@@ -370,7 +370,7 @@ input:focus{
         display:flex;
     }
 }
-@media screen and (min-width:800px) {
+@media screen and (min-width:821px) {
     /* utilities */
     .desktop{
         display: contents;
@@ -397,6 +397,7 @@ input:focus{
     }
     .nav-bar ul li .btn{
         display: flex;
+        padding:10px;
         justify-content: center;
         align-items: center;
         font-size: 16px;
@@ -416,6 +417,11 @@ input:focus{
     .nav-bar > .container{
         align-items: flex-start;
         padding-left: 25%;
+    }
+    .nav-card button{
+        border: none;
+        background: transparent;
+        width: 25px;
     }
     /* main */
     .main{
