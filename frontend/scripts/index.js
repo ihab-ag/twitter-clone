@@ -8,9 +8,15 @@ let login_btn = document.getElementById("login-btn");
 //Signup form buttons
 let signup_btn_popup = document.getElementById("signup-btn-popup");
 let close_signup_btn_popup = document.getElementById("close-btn-signup");
-//Document values
+let signup_btn = document.getElementById("signup-btn");
+//Document values login-from
 let username = document.getElementById("username");
 let password = document.getElementById("password");
+
+//Document values signup-from
+let username_signup = document.getElementById("username-signup");
+let password_signup = document.getElementById("password-signup");
+let email_signup = document.getElementById("email-signup");
 
 //Check if user logged in
 if(localStorage.getItem("loggedin")){
@@ -22,6 +28,7 @@ close_btn.addEventListener("click", closeLoginPopup);
 login_btn.addEventListener("click", loginUser);
 signup_btn_popup.addEventListener("click", e => {signup_container.classList.remove("hidden")})
 close_signup_btn_popup.addEventListener("click", e => {signup_container.classList.add("hidden")})
+signup_btn.addEventListener("click", signupUser);
 
 function loginPopup(){
     login_container.classList.remove("hidden");
@@ -31,6 +38,7 @@ function closeLoginPopup(){
     login_container.classList.add("hidden");
 }
 
+//Login functionality
 function loginUser(){
     let data = {"username": username.value,
                 "password": password.value};
@@ -60,4 +68,10 @@ function checkLogin(data, username, password){
 	if(localStorage.getItem("loggedin")){
 		console.log("logged in");
 	}
+}
+
+//Signup functionality
+function signupUser(){
+    console.log(username_signup.value);
+    console.log(password_signup.value);
 }
