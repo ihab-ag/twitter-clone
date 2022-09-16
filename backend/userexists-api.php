@@ -7,14 +7,16 @@
         $query = $mysqli->prepare("SELECT * FROM users WHERE username = ?");
         $query->bind_param("s", $username);
         $query->execute();
-        $array = $query->get_result();
-    
+        $result = $query->get_result();
         $response = [];
-    
-        while($a = $array->fetch_assoc()){
-            $response[] = $a;
+
+        if($result->fetch_assoc()){
+            $response["usernamefound"] = true;
         }
-    
+        else{
+            $response["usernamefound"] = false;
+        }
+
         $json = json_encode($response);
         echo $json;
     }
@@ -26,12 +28,14 @@
         $query->execute();
         $result = $query->get_result();
         $response = [];
+
         if($result->fetch_assoc()){
-            $response["success"] = true;
+            $response["emailfound"] = true;
         }
         else{
-            $response["success"] = false;
+            $response["emailfound"] = false;
         }
+
         $json = json_encode($response);
         echo $json;
     }
