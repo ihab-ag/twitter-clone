@@ -17,6 +17,10 @@ let password = document.getElementById("password");
 let username_signup = document.getElementById("username-signup");
 let password_signup = document.getElementById("password-signup");
 let email_signup = document.getElementById("email-signup");
+const signupErrorDiv = document.getElementById("error-signup");
+
+//Other documents
+
 
 //Check if user logged in
 if(localStorage.getItem("loggedin")){
@@ -72,13 +76,26 @@ function checkLogin(data, username, password){
 
 //Signup functionality
 function signupUser(){
-    console.log(username_signup.value);
-    console.log(password_signup.value);
+    error_message = "";
+    if(!validateUsername(username_signup.value)){
+        error_message += "Name is too short! (Minimum 7 characaters) <br>"
+    }
+    if(!validateEmail(email_signup.value)){
+        error_message += "Email is incorrect! <br>";
+    }
+    if(error_message != ''){
+        signupErrorDiv.classList.remove("hidden");
+        signupErrorDiv.innerHTML = error_message;
+    }
+    else{
+        signupErrorDiv.innerHTML = "";
+    }
+    console.log(error_message);
 }
 
 //Validation functions
 function validateUsername(username) {
-    if(username.value.length <= 7){
+    if(username.length < 7){
         return false;
     }
     return true;
