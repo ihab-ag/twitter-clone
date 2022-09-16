@@ -75,3 +75,16 @@ function signupUser(){
     console.log(username_signup.value);
     console.log(password_signup.value);
 }
+
+//Validation functions
+function validateUsername(username) {
+    if(username.value.length <= 7){
+        return false;
+    }
+    return true;
+}
+
+function validateEmail(email) {
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+}
