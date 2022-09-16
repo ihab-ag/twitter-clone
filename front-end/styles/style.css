@@ -392,7 +392,19 @@ input:focus{
         width:20%;
     }
     .nav-bar ul{
-        gap:15px;
+        gap:20px;
+        width:100%;
+    }
+    .nav-bar ul li .btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        width:100%;
+    }
+    .nav-bar ul li .btn p{
+        font-weight: 700;
+        letter-spacing: 1px;
     }
     .nav-bar li:not(.mobile){
         display: flex;
