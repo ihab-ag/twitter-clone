@@ -409,4 +409,8 @@ input:focus{
     .main{
         padding-left: 20%;
     }
+    /* profile */
+    .profile__bg{
+        height: 26vh;
+    }
 }
