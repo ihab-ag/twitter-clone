@@ -90,7 +90,8 @@ function signupUser(){
     else{
         signupErrorDiv.innerHTML = "";
         sendRegisterRequest("../backend/userexists-api.php", {"username": username_signup.value,
-                                                             "email": email_signup.value});
+                                                              "email": email_signup.value,
+                                                              "password": password_signup.value});
     }
     //console.log(error_message);
 }

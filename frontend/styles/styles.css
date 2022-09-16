@@ -215,6 +215,18 @@ h3 {
     background-color: lightgrey; 
 }
 
+.green-div{
+    border-radius: 10px;
+    background-color: green;
+    box-shadow: #1f94dd;
+}
+
+.red-div{
+    border-radius: 10px;
+    background-color: red;
+    box-shadow: #1f94dd;
+}
+
 @media(max-width: 1000px) {
     .content {
         order: -1;
