@@ -83,6 +83,20 @@ body {
     background: #1f94dd;
 }
 
+.btn-login {
+    border: 1px solid #1da1f2;
+    color: #1da1f2;
+}
+
+.btn-black {
+    background: black;
+    color: white;
+}
+
+.btn-black:hover {
+    background: rgb(37, 37, 37);
+}
+
 
 
 /* Footer */
