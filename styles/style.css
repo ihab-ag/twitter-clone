@@ -117,8 +117,9 @@ input:focus{
 .main{
     display: flex;
     flex-direction: column;
-    width: min(100%,575px);
+    width: 100%;
     padding-left: 20%;
+    padding-right:35%;
 }
 /* Home */
 .home{
@@ -308,6 +309,8 @@ input:focus{
         flex-direction: column;
         gap:15px;
         display:none;
+        position:fixed;
+        right:0;
     }
     .search{
         display:flex;
@@ -371,15 +374,34 @@ input:focus{
     .desktop{
         display: contents;
     }
+    
     .tablet{
         display: none;
+    }
+    .stack{
+        display:flex;
+        flex-direction: column;
     }
     /* nav-bar */
     .nav-bar{
         width:20%;
     }
+    .nav-bar ul{
+        gap:15px;
+    }
+    .nav-bar li:not(.mobile){
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+        gap:10px;
+    }
+    .nav-bar > .container{
+        align-items: flex-start;
+    }
     /* main */
     .main{
         padding-left: 20%;
+        width:90%;
     }
 }
