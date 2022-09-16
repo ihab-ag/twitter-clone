@@ -216,12 +216,22 @@ h3 {
 }
 
 .green-div{
+    padding: 5px 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     border-radius: 10px;
     background-color: green;
     box-shadow: #1f94dd;
 }
 
 .red-div{
+    padding: 5px 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     border-radius: 10px;
     background-color: red;
     box-shadow: #1f94dd;

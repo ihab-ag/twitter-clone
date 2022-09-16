@@ -76,7 +76,7 @@ function checkLogin(data, username, password){
 
 //Signup functionality
 function signupUser(){
-    error_message = "";
+    let error_message = "";
     if(!validateUsername(username_signup.value)){
         error_message += "Name is too short! (Minimum 7 characaters) <br>"
     }
@@ -84,6 +84,7 @@ function signupUser(){
         error_message += "Email is incorrect! <br>";
     }
     if(error_message != ''){
+        signupErrorDiv.classList.add("red-div");
         signupErrorDiv.classList.remove("hidden");
         signupErrorDiv.innerHTML = error_message;
     }
@@ -102,7 +103,30 @@ function sendRegisterRequest(url, data){
 	fetch(url , {
         method: 'POST',
         body: new URLSearchParams(data),
-    }).then(response => response.json()).then(dataResponse => {console.log(dataResponse)});
+    }).then(response => response.json()).then(dataResponse => {registerResponse(dataResponse.usernamefound, dataResponse.emailfound, dataResponse.useradded)});
+}
+
+function registerResponse(usernamefound, emailfound, added){
+    let error_message = '';
+    if(!usernamefound && !emailfound){
+        error_message = "Account created!"
+        signupErrorDiv.classList.add("green-div");
+        signupErrorDiv.classList.remove("hidden");
+        signupErrorDiv.classList.remove("red-div");
+        signupErrorDiv.innerHTML = error_message;
+    }
+    else{
+        if(usernamefound){
+            error_message += "Username already taken! + <br>";
+        }
+        if(emailfound){
+            error_message += "Email already taken! + <br>";
+        }
+        signupErrorDiv.classList.add("red-div");
+        signupErrorDiv.classList.remove("hidden");
+        signupErrorDiv.classList.remove("green-div");
+        signupErrorDiv.innerHTML = error_message;
+    }
 }
 
 //Validation functions
