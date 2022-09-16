@@ -1,23 +1,26 @@
 //Containers
-let login_container = document.getElementById("login-popup");
-let signup_container = document.getElementById("signup-popup");
+const login_container = document.getElementById("login-popup");
+const signup_container = document.getElementById("signup-popup");
+
 //Login form buttons
-let login_btn_popup = document.getElementById("login-btn-popup");
-let close_btn = document.getElementById("close-btn");
-let login_btn = document.getElementById("login-btn");
+const login_btn_popup = document.getElementById("login-btn-popup");
+const close_btn = document.getElementById("close-btn");
+const login_btn = document.getElementById("login-btn");
+
 //Signup form buttons
-let signup_btn_popup = document.getElementById("signup-btn-popup");
-let close_signup_btn_popup = document.getElementById("close-btn-signup");
-let signup_btn = document.getElementById("signup-btn");
+const signup_btn_popup = document.getElementById("signup-btn-popup");
+const close_signup_btn_popup = document.getElementById("close-btn-signup");
+const signup_btn = document.getElementById("signup-btn");
+
 //Document values login-from
-let username = document.getElementById("username");
-let password = document.getElementById("password");
+const username = document.getElementById("username");
+const password = document.getElementById("password");
 const error_login = document.getElementById("error-login");
 
 //Document values signup-from
-let username_signup = document.getElementById("username-signup");
-let password_signup = document.getElementById("password-signup");
-let email_signup = document.getElementById("email-signup");
+const username_signup = document.getElementById("username-signup");
+const password_signup = document.getElementById("password-signup");
+const email_signup = document.getElementById("email-signup");
 const signupErrorDiv = document.getElementById("error-signup");
 
 //Other documents
