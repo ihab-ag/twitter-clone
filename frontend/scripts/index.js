@@ -42,3 +42,18 @@ function sendLoginRequest(url, data){
         body: new URLSearchParams(data),
     }).then(response => response.json()).then(dataResponse => {checkLogin(dataResponse, data.username, data.password);});
 }
+
+function checkLogin(data, username, password){
+	console.log(data.success);
+	if(data.success == true){
+		var userinfo = {
+			username: username,
+			password: password,
+		};
+		var json = JSON.stringify(userinfo);
+		localStorage.setItem("loggedin", stringyfiedData);
+	}
+	if(localStorage.getItem("loggedin")){
+		console.log("logged in");
+	}
+}
