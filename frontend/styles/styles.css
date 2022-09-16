@@ -60,10 +60,7 @@ body {
     margin-top: 10px;
 }
 
-h1, h3 {
-    color: #0f1419;
-    font-weight: 900;
-}
+
 
 /* Footer */
 .footer nav {
@@ -104,4 +101,19 @@ h1, h3 {
     align-items: center;
     border-radius: 5px;
     border: 5px solid #1f94dd;
+}
+
+/* Utilities */
+
+h1, h3 {
+    color: #0f1419;
+    font-weight: 900;
+}
+
+h1 {
+    font-size: 5.5vw;
+}
+
+h3 {
+    font-size: 2.3rem;
 }
