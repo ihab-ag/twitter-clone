@@ -12,6 +12,10 @@ let close_signup_btn_popup = document.getElementById("close-btn-signup");
 let username = document.getElementById("username");
 let password = document.getElementById("password");
 
+//Check if user logged in
+if(localStorage.getItem("loggedin")){
+    //window.location.href = "./twitter-homepage/";
+}
 
 login_btn_popup.addEventListener("click", loginPopup);
 close_btn.addEventListener("click", closeLoginPopup);
@@ -50,8 +54,8 @@ function checkLogin(data, username, password){
 			username: username,
 			password: password,
 		};
-		var json = JSON.stringify(userinfo);
-		localStorage.setItem("loggedin", stringyfiedData);
+		let json = JSON.stringify(userinfo);
+		localStorage.setItem("loggedin", json);
 	}
 	if(localStorage.getItem("loggedin")){
 		console.log("logged in");
