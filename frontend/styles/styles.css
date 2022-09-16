@@ -64,3 +64,27 @@ h1, h3 {
     color: #0f1419;
     font-weight: 900;
 }
+
+/* Footer */
+.footer nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+  
+.footer nav a,
+.footer nav div {
+    text-decoration: none;
+    font-size: 13px;
+    color: #536471;
+    margin: .3rem .5rem;
+    text-transform: capitalize;
+    border-bottom: 1px solid transparent;
+    transition: all .2s ease;
+}
+
+.footer nav a:hover {
+    border-bottom: 1px solid #536471;
+}
