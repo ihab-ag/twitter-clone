@@ -198,6 +198,13 @@ input:focus{
     align-items: center;
     width: 100%;
 }
+.edit .btn{
+    background-color: #f6f6f6;
+    color: #3f4040;
+    font-weight: 700;
+    padding: 6px;
+    width: 55px;
+}
 .profile .container:first-child{
     padding-top: 15px;
     padding-bottom: 10px;
