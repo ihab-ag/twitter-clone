@@ -6,7 +6,7 @@ let login_btn_popup = document.getElementById("login-btn-popup");
 let close_btn = document.getElementById("close-btn");
 //Signup form buttons
 let signup_btn_popup = document.getElementById("signup-btn-popup");
-let close_signup_btn_popup = document.getElementById("close-btn");
+let close_signup_btn_popup = document.getElementById("close-btn-signup");
 
 login_btn_popup.addEventListener("click", loginPopup);
 close_btn.addEventListener("click", closeLoginPopup);
