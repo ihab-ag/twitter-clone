@@ -117,7 +117,7 @@ input:focus{
 .main{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: min(100%,575px);
     padding-left: 20%;
     padding-right:35%;
 }
@@ -362,6 +362,7 @@ input:focus{
     }
     /* main */
     .main{
+        width:100%;
         padding-left: 15%;
     }
     /* search bar */
