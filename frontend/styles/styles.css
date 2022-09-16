@@ -195,3 +195,29 @@ h1 {
 h3 {
     font-size: 2.3rem;
 }
+
+@media(max-width: 1000px) {
+    .content {
+        order: -1;
+        max-width: 600px;
+        height: 80vh;
+        margin: 0 auto;
+    }
+
+    .image {
+        height: 50vh;
+        flex:  0 1 100vw;
+        max-width: 100%;
+    }
+
+    .button {
+        display: flex;
+    }
+
+    .btn {
+        width: 15rem;
+        margin-right: 1rem;
+    }
+
+
+}
