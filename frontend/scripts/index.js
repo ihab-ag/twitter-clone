@@ -89,8 +89,19 @@ function signupUser(){
     }
     else{
         signupErrorDiv.innerHTML = "";
+        sendRegisterRequest("../backend/userexists-api.php", {"username": username_signup.value,
+                                                             "email": email_signup.value});
     }
-    console.log(error_message);
+    //console.log(error_message);
+}
+
+function sendRegisterRequest(url, data){
+    stringyfiedData = JSON.stringify(data);
+	console.log();
+	fetch(url , {
+        method: 'POST',
+        body: new URLSearchParams(data),
+    }).then(response => response.json()).then(dataResponse => {console.log(dataResponse)});
 }
 
 //Validation functions
