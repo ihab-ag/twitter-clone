@@ -418,10 +418,9 @@ input:focus{
         align-items: flex-start;
         padding-left: 25%;
     }
-    .nav-card button{
-        border: none;
-        background: transparent;
-        width: 25px;
+    .nav-card {
+        justify-content: start;
+        gap: 5px;
     }
     /* main */
     .main{
