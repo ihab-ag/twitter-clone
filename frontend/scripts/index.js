@@ -12,6 +12,7 @@ let signup_btn = document.getElementById("signup-btn");
 //Document values login-from
 let username = document.getElementById("username");
 let password = document.getElementById("password");
+const error_login = document.getElementById("error-login");
 
 //Document values signup-from
 let username_signup = document.getElementById("username-signup");
@@ -61,6 +62,10 @@ function sendLoginRequest(url, data){
 
 function checkLogin(data, username, password){
 	console.log(data.success);
+    error_login.classList.remove("hidden");
+    error_login.classList.remove("red-div");
+    error_login.classList.add("green-div");
+    error_login.innerHTML = "Logged in!";
 	if(data.success == true){
 		var userinfo = {
 			username: username,
@@ -69,6 +74,12 @@ function checkLogin(data, username, password){
 		let json = JSON.stringify(userinfo);
 		localStorage.setItem("loggedin", json);
 	}
+    else{
+        error_login.classList.remove("hidden");
+        error_login.classList.remove("green-div");
+        error_login.classList.add("red-div");
+        error_login.innerHTML = "Incorrect creditials!";
+    }
 	if(localStorage.getItem("loggedin")){
 		console.log("logged in");
 	}
