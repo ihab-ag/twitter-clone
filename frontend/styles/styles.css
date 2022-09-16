@@ -140,6 +140,24 @@ body {
     border: 5px solid #1f94dd;
 }
 
+.login-popup-form input{
+    width: 70%;
+    margin-bottom: 10px;
+}
+
+.login-popup-form button{
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+.login-popup-form h3{
+    margin-bottom: 10px;
+}
+
+.login-popup-form h5{
+    margin-bottom: 10px;
+}
+
 /* Utilities */
 
 h1, h3 {
