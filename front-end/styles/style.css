@@ -191,6 +191,13 @@ input:focus{
     border-radius: 50px;
     border: 4px solid white;
 }
+.edit{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
 .profile .container:first-child{
     padding-top: 15px;
     padding-bottom: 10px;
@@ -421,6 +428,13 @@ input:focus{
     .nav-card {
         justify-content: start;
         gap: 5px;
+    }
+    .nav-card .profile-icon{
+        height:50px;
+        width:50px;
+    }
+    .nav-card .large{
+        font-size:20px;
     }
     /* main */
     .main{
