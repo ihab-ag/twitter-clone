@@ -12,6 +12,11 @@ window.onload=()=>{
         profile.style.display="none";
         home.style.display="flex";
     }
+    // show profile
+    const showProfile=()=>{
+        profile.style.display="flex";
+        home.style.display="none";
+    }
     // main
     homeNav.onclick=()=>showHome();
 }
