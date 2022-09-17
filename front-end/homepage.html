@@ -154,9 +154,10 @@
             <div class="tweet-box__input container">
                 <div class="input" >
                     <textarea type="text" placeholder="What's happening?"></textarea>
-                    <button class="img-input btn"><img src="content/pic-icon.png" alt=""></button>
+                    <label for="img-input" class="img-input btn"><img src="content/pic-icon.png" alt=""></label>
+                    <input type="file" id="img-input">
                 </div>
-                <p class="medium normal">0/280</p>
+                <p class="medium normal"><span id="wordCounter">0</span>/280</p>
             </div>
             <div class="tweet-btn"><p class="bold">Tweet</p></div>
         </div>
