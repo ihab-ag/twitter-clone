@@ -92,6 +92,7 @@ input:focus{
 }
 .nav-bar li{
     list-style: none;
+    cursor: pointer;
 }
 .nav__icon{
     width:34px;
@@ -117,6 +118,7 @@ input:focus{
 .nav-card__menu{
     position: absolute;
     top:0;
+    cursor: pointer;
 }
 .nav-card__menu {
     position: absolute;
@@ -339,7 +341,8 @@ input:focus{
         display: flex;
         flex-direction: column;
         gap:15px;
-        display:none;
+        /* display:none; */
+        width:65%;
         position:fixed;
         right:0;
     }
@@ -400,6 +403,7 @@ input:focus{
     /* search bar */
     .search-bar{
         display:flex;
+        width:35%;
     }
 }
 @media screen and (min-width:821px) {
