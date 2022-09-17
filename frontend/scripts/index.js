@@ -63,10 +63,10 @@ function sendLoginRequest(url, data){
 	fetch(url , {
         method: 'POST',
         body: new URLSearchParams(data),
-    }).then(response => response.json()).then(dataResponse => {checkLogin(dataResponse, data.username, data.password);});
+    }).then(response => response.json()).then(dataResponse => {checkLogin(dataResponse, data.id, data.username, data.password);});
 }
 
-function checkLogin(data, username, password){
+function checkLogin(data, userid, username, password){
 	console.log(data.success);
     error_login.classList.remove("hidden");
     error_login.classList.remove("red-div");
@@ -74,7 +74,8 @@ function checkLogin(data, username, password){
     error_login.innerHTML = "Logged in!";
 	if(data.success == true){
 		var userinfo = {
-			username: username,
+			userid: userid,
+            username: username,
 			password: password,
 		};
 		let json = JSON.stringify(userinfo);
