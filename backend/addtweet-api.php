@@ -7,7 +7,7 @@
         extract($_POST);
         $query = $mysqli->prepare("INSERT INTO `tweets` (`users_id`, `tweet_text`, `has_picture`) 
         VALUES (?, ?, ?)");
-        $query->bind_param("sss", $userid, $tweet_text, $hasimage);
+        $query->bind_param("ssi", $userid, $tweet_text, $hasimage);
         $query->execute();
         $result = $query->get_result();
         $response['tweetadded'] = true;
