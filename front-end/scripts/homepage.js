@@ -8,7 +8,8 @@ window.onload=()=>{
     const searchBar= document.querySelector('.search-bar');  
     const main= document.querySelector('.main');  
     const body=document.getElementsByTagName('body')[0];
-    const tweetBtn=document.getElementById('tweetBtn');
+    const tweetBtn=document.getElementById('tweetBtn'); 
+    const tweetBoxBg=document.querySelector('tweet-box__bg');
 
     // functions
     // show home
@@ -38,6 +39,10 @@ window.onload=()=>{
     const showSearch=()=>{
         searchBar.style.display='flex';
         main.style.display='none';
+    }
+    // show tweetbox
+    const showTweetBox=()=>{
+        tweetBoxBg.style.display='block';
     }
     // main
     homeNav.onclick=()=>showHome();
