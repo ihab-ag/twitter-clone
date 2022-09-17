@@ -275,6 +275,10 @@ input:focus{
 .tweet__withimg .tweet{
     border-bottom: none;
 }
+.tweet__withimg{
+    display: flex;
+    flex-direction: column;
+}
 /* tweet box */
 .tweet-box{
     position:fixed;
