@@ -63,18 +63,20 @@ function sendLoginRequest(url, data){
 	fetch(url , {
         method: 'POST',
         body: new URLSearchParams(data),
-    }).then(response => response.json()).then(dataResponse => {checkLogin(dataResponse, data.username, data.password);});
+    }).then(response => response.json()).then(dataResponse => {checkLogin(dataResponse);});
 }
 
-function checkLogin(data, userid, username, password){
-	console.log(data.user);
+function checkLogin(data){
     error_login.classList.remove("hidden");
     error_login.classList.remove("red-div");
     error_login.classList.add("green-div");
     error_login.innerHTML = "Logged in!";
 	if(data.success == true){
+        let id = data['user'].id;
+        let username = data.user.username;
+        let password = data.user.password;
 		var userinfo = {
-			userid: userid,
+			userid: id,
             username: username,
 			password: password,
 		};
