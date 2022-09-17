@@ -44,6 +44,10 @@ window.onload=()=>{
     const showTweetBox=()=>{
         tweetBoxBg.style.display='block';
     }
+    // hide tweetbox
+    const hideTweetBox=()=>{
+        tweetBoxBg.style.display='none';
+    }
     // main
     homeNav.onclick=()=>showHome();
     profileNav.onclick=()=>showProfile();
