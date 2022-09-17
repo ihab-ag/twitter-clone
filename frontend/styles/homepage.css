@@ -278,8 +278,19 @@ input:focus{
 .tweet__withimg{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    border-bottom: solid 1px;
 }
-
+.tweet-img{
+    width:80%;
+    height:60%;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.tweet-img img{
+    height:100%;
+    border-radius: 1%;
+}
 /* tweet box */
 .tweet-box{
     position:fixed;
