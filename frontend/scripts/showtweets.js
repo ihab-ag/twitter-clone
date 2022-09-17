@@ -1,6 +1,6 @@
 const tweetsContainer = document.getElementById("main");
 const api_url = "../backend/select_tweets-api.php";
-const userid = localStorage.getItem("loggedIn").username;
+const userid = localStorage.getItem("loggedin").username;
 
 function sendPostRequest(url, data){
     stringyfiedData = JSON.stringify(data);

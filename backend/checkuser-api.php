@@ -14,13 +14,18 @@
         $result = $query->get_result();
         
         $response = [];
-        if($result->fetch_assoc()){
+
+        while($a = $result->fetch_assoc()){
+            $response['user'] = $a;
+        }
+
+        if(isset($response['user'])){
             $response["success"] = true;
         }
         else{
             $response["success"] = false;
         }
-        //$response[]
+        
         $json = json_encode($response);
         echo $json;
     }
