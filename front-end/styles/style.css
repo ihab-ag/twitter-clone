@@ -280,7 +280,7 @@ input:focus{
     display: none;
 }
 .tweet-box__head{
-    height: 7.5vw;
+    height: 7.5vmin;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -306,7 +306,7 @@ input:focus{
     justify-content: space-between;
     align-items: center;
 }
-.input input{
+.input textarea{
     flex-grow: 1;
     height:35px;
     background: transparent;
