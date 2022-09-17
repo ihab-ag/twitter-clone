@@ -14,8 +14,8 @@ window.onload=()=>{
     }
     // show profile
     const showProfile=()=>{
-        profile.style.display="flex";
         home.style.display="none";
+        profile.style.display="block";
     }
     // main
     homeNav.onclick=()=>showHome();
