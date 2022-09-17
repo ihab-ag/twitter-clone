@@ -31,6 +31,9 @@ function checkUser(data){
 
 function InstantiateProfileCard(data){
     search_results_div.innerHTML = "";
+    let toFollowUserID = data[0].id;
+    let toFollowUserName = data[0].username;
+
     //Tweet containers
     let searchResult = document.createElement('div');
     searchResult.classList.add("search-result");
@@ -63,7 +66,7 @@ function InstantiateProfileCard(data){
     p1.innerHTML = data[0].fname + data[0].lname;
     let p2 = document.createElement('p');
     p2.classList.add("medium", "light", "grey");
-    p2.innerHTML = "@" + data[0].username;
+    p2.innerHTML = "@" + toFollowUserName;
     stack.appendChild(p1);
     stack.appendChild(p2);
 
@@ -72,9 +75,9 @@ function InstantiateProfileCard(data){
 
     //CHECK IF FOLLOWING USER
     url = "../backend/checkfollowing-api.php";
-    data = {'userid': userid, 'tofollowuserid': data[0].id};
+    data = {'userid': userid, 'tofollowuserid': toFollowUserID};
     console.log(data);
-    console.log(checkFollowingRequest(url, data, profileFollow));
+    console.log(checkFollowingRequest(url, data, profileFollow, toFollowUserID, toFollowUserName));
 
     let followbtn2 = document.createElement("button");
     followbtn2.classList.add("btn");
@@ -86,46 +89,46 @@ function InstantiateProfileCard(data){
     bio.classList.add("medium", "light", "grey");
     bio.innerHTML = "bio lmao";
     searchResult.appendChild(bio);
-    /*
-    <div class="search-result">
-        <div class="profile-follow">
-            <div class="nav-card">
-                <div class="profile-icon">
-                    <img src="content/profile-mock.jpg" alt="profile">
-                </div>
-                <div class="stack">
-                    <p class="large bold">Name</p>
-                    <p class="medium light grey">@username</p>
-                </div>
-            </div>
-            <button class="btn">Follow</button>
-        </div>
-        <p class="medium light-grey light">this is a user bio</p>
-    </div>
-
-
-    */
 }
 
-function checkFollowingRequest(url, data, profileFollow){
+function checkFollowingRequest(url, data, profileFollow, toFollowUserID, toFollowUserName){
     stringyfiedData = JSON.stringify(data);
 	fetch(url , {
         method: 'POST',
         body: new URLSearchParams(data),
     }).then(response => response.json()).then(dataResponse => 
         {
+            let url = "../backend/follow-api.php";
             if(dataResponse.following){
-                let followbtn = document.createElement("button");
-                followbtn.classList.add("btn");
-                followbtn.innerHTML = "Unfollow";
-                profileFollow.appendChild(followbtn);
+                let unfollowbtn = document.createElement("button");
+                unfollowbtn.classList.add("btn");
+                unfollowbtn.innerHTML = "Unfollow";
+                profileFollow.appendChild(unfollowbtn);
+                unfollowbtn.addEventListener("click", e => {
+                    let data = {"userid": userid, "tofollowuserid": toFollowUserID, "todo": "unfollow"};
+                    followUser(url, data);
+                    sendSearchRequest('../backend/search-api.php', {"username": toFollowUserName});
+                })            
             }
             else{
                 let followbtn = document.createElement("button");
                 followbtn.classList.add("btn");
                 followbtn.innerHTML = "Follow";
                 profileFollow.appendChild(followbtn);
+                followbtn.addEventListener("click", e => {
+                    let data = {"userid": userid, "tofollowuserid": toFollowUserID, "todo": "follow"};
+                    followUser(url, data);
+                    sendSearchRequest('../backend/search-api.php', {"username": toFollowUserName});
+                })
             }
 });
+}
+
+function followUser(url, data){
+    stringyfiedData = JSON.stringify(data);
+    fetch(url , {
+        method: 'POST',
+        body: new URLSearchParams(data),
+    }).then(response => response.json()).then(dataResponse => {console.log(dataResponse);});
 }
 
