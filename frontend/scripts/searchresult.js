@@ -61,11 +61,20 @@ function InstantiateProfileCard(data){
     p1.innerHTML = data[0].fname + data[0].lname;
     let p2 = document.createElement('p');
     p2.classList.add("medium", "light", "grey");
+    p2.innerHTML = "@" + data[0].username;
     stack.appendChild(p1);
     stack.appendChild(p2);
 
     //Button
+    let followbtn = document.createElement("button");
+    followbtn.classList.add("btn");
+    profileFollow.appendChild(followbtn);
 
+    //Bio
+    let bio = document.createElement("p");
+    bio.classList.add("medium", "light", "grey");
+    bio.innerHTML = "bio lmao";
+    searchResult.appendChild(bio);
     /*
     <div class="search-result">
         <div class="profile-follow">
