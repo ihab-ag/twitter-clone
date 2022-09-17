@@ -11,12 +11,14 @@ window.onload=()=>{
     const tweetBtn=document.getElementById('tweetBtn'); 
     const tweetBoxBg=document.querySelector('.tweet-box__bg');
     const tweetBox=document.querySelector('.tweet-box');
+    const tweetInput =document.getElementById('tweetInput');
+    const wordCounter=document.getElementById('wordCounter');
 
     // functions
     // show home
-    const showHome=()=>{
-        profile.style.display="none";
-        home.style.display="block";
+    function showHome() {
+        profile.style.display = "none";
+        home.style.display = "block";
         showMain();
     }
     // show profile
@@ -60,5 +62,7 @@ window.onload=()=>{
         if(e.target.className=="tweet-box__bg")
         hideTweetBox();
     }
-    
+    tweetInput.onkeydown=()=>{
+        wordCounter.innerText=tweetInput.value.length;
+    }
 }
