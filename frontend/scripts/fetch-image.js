@@ -6,10 +6,14 @@ fileInput.addEventListener("change", e => {
 
     reader.addEventListener("load", () => {
         console.log(reader.result);
-        let url = '../backend/addimage-api.php';
-        let data = {'image64base': reader.result,
+        let imageinbase = reader.result;
+        //split to remove "data:image/png;base64,"
+        const pure64base = imageinbase.split(",");
+        let url = '../../backend/addimage-api.php';
+        let data = {'image64base': pure64base[1],
                     'profilepic': false,
-                    'filename': 'name'};
+                    'name': 'name'};
+        sendImageRequest(url, data);
     })
 
     reader.readAsDataURL(file);
@@ -22,5 +26,5 @@ function sendImageRequest(url, data){
 	fetch(url , {
         method: 'POST',
         body: new URLSearchParams(data),
-    }).then(response => response.json()).then(dataResponse => {});
+    }).then(response => response.json()).then(dataResponse => {console.log(dataResponse)});
 }
