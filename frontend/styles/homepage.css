@@ -347,6 +347,7 @@ input[type="file"]{
     justify-content: center;
     align-items: center;
     border-radius: 0 0 10px 10px;
+    cursor: pointer;
 }
     /* search bar */
     .search-bar{
