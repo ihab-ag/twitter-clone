@@ -104,6 +104,7 @@ input:focus{
 }
 /* profile card */
 .nav-card{
+    position:relative;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -112,6 +113,21 @@ input:focus{
 .nav-card .profile-icon{
     width:48px;
     height:48px;
+}
+.nav-card__menu{
+    position: absolute;
+    top:0;
+}
+.nav-card__menu {
+    position: absolute;
+    top: 0;
+    transform: translateY(-200%);
+    width: 100%;
+    background: white;
+    text-align: center;
+    color: red;
+    font-weight: 500;
+    border-radius: 50px;
 }
 /* main */
 .main{
