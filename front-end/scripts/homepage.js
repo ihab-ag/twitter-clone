@@ -13,11 +13,13 @@ window.onload=()=>{
     const showHome=()=>{
         profile.style.display="none";
         home.style.display="flex";
+        showMain();
     }
     // show profile
     const showProfile=()=>{
         home.style.display="none";
         profile.style.display="block";
+        showMain();
     }
     // show main
     const showMain=()=>{
