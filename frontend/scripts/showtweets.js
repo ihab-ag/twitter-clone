@@ -7,7 +7,13 @@ function sendPostRequest(url, data){
 	fetch(url , {
         method: 'POST',
         body: new URLSearchParams(data),
-    }).then(response => response.json()).then(dataResponse => {console.log(dataResponse);});
+    }).then(response => response.json()).then(dataResponse => {displayTweets(dataResponse);});
 }
 
 sendPostRequest(api_url, {"userid" : 1});
+
+function displayTweets(dataResponse){
+    for(let i = 0; i < dataResponse.length; i++){
+        console.log(dataResponse[i].tweet_text);
+    }
+}
