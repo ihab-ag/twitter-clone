@@ -55,24 +55,7 @@ function displayTweets(dataResponse){
         //Like Icon
         url = '../backend/checklike-api.php';
         data = {"userid": userid, "tweet_id": tweet_id};
-        sendTweetsLikeRequest(url, data, tweetContainer, tweet_id);        
-
-        /*
-    <div class="tweet container" id="tweet-container">
-        <div class="tweet__content">
-            <div class="profile-icon">
-                <img src="content/profile-mock.jpg" alt="profile img">
-            </div>
-            <div class="tweet__texts">
-                <p class="bold medium">Name <span class="small light light-grey">@usernsme</span></p>
-                <p class="medium normal">Something randomnbeing said on twitter</p>
-            </div>
-        </div>
-        <div class="like-icon">
-            <img src="content/like.png" alt="like">
-        </div>
-    </div>
-    */
+        sendTweetsLikeRequest(url, data, tweetContainer, tweet_id);
     }
 }
 
@@ -90,7 +73,7 @@ function sendTweetsLikeRequest(url, data, tweetContainer, tweet_id){
             likeImage.setAttribute('src', 'content/liked.png');
             likeDiv.appendChild(likeImage);
             tweetContainer.appendChild(likeDiv);
-            likeDiv.addEventListener("click", function(){likeTweet(tweet_id, likeDiv)});
+            //likeDiv.addEventListener("click", function(){likeTweet(tweet_id, likeDiv)});
         }
         else{
             let likeDiv = document.createElement('div');
@@ -99,10 +82,25 @@ function sendTweetsLikeRequest(url, data, tweetContainer, tweet_id){
             likeImage.setAttribute('src', 'content/like.png');
             likeDiv.appendChild(likeImage);
             tweetContainer.appendChild(likeDiv);
+            likeDiv.addEventListener("click", function(){likeTweet(tweet_id, likeImage);
+            likeImage.setAttribute('src', 'content/liked.png'); });
         }
     });
 }
 
-function likeTweet(tweet_id, likeDiv){
+function likeTweet(tweet_id, likeImage){
+    let url = "../backend/addtweetlike-api.php";
+    let data = {"tweet_id": tweet_id, "userid": userid};
+    likeRequest(url, data);
+    
+}
+
+function likeRequest(url, data){
+    stringyfiedData = JSON.stringify(data);
+	console.log();
+	fetch(url , {
+        method: 'POST',
+        body: new URLSearchParams(data),
+    }).then(response => response.json()).then(dataResponse => {console.log(dataResponse);});
 
 }
