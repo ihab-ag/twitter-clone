@@ -15,7 +15,6 @@ sendPostRequest(api_url, {"userid" : 1});
 
 function displayTweets(dataResponse){
     for(let i = 0; i < dataResponse.length; i++){
-        console.log(dataResponse[i].tweet_text);
 
         //Tweet containers
         let tweetContainer = document.createElement('div');
