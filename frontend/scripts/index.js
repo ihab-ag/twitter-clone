@@ -27,9 +27,12 @@ const signupErrorDiv = document.getElementById("error-signup");
 
 
 //Check if user logged in
-if(localStorage.getItem("loggedin")){
-    //window.location.href = "./twitter-homepage/";
+function LogUserIn(){
+    if(localStorage.getItem("loggedin")){
+        window.location.href = "./homepage.html";
+    }
 }
+
 
 login_btn_popup.addEventListener("click", loginPopup);
 close_btn.addEventListener("click", closeLoginPopup);
@@ -84,7 +87,7 @@ function checkLogin(data, username, password){
         error_login.innerHTML = "Incorrect creditials!";
     }
 	if(localStorage.getItem("loggedin")){
-		console.log("logged in");
+		setInterval(LogUserIn, 500);
 	}
 }
 
