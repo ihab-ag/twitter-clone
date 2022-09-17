@@ -1,3 +1,7 @@
 window.onload=()=>{
-    console.log('hello');
+    // elements html
+    const homeNav = document.getElementById('homeNav');
+    const searchNav = document.getElementById('searchNav');
+    const profileNav = document.getElementById('profileNav');
+
 }
