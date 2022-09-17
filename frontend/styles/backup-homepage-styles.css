@@ -73,3 +73,16 @@ html{
     margin: 0;
 }
 
+.black-icons{
+    width: 3rem;
+    fill: #1da1f2;
+    margin: 0;
+    padding: 0;
+}
+
+.smaller-bird {
+    width: 3rem;
+    fill: #1da1f2;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
