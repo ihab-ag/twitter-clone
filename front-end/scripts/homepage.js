@@ -8,6 +8,7 @@ window.onload=()=>{
     const searchBar= document.querySelector('.search-bar');  
     const main= document.querySelector('.main');  
     const body=document.getElementsByTagName('body')[0];
+    const tweetBtn=document.getElementById('tweetBtn');
 
     // functions
     // show home
