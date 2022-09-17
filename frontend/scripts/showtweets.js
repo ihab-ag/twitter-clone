@@ -2,7 +2,7 @@ const tweetsContainer = document.getElementById("main");
 const api_url = "../backend/select_tweets-api.php";
 let userid = JSON.parse(localStorage.getItem("loggedin")).userid;
 
-function sendPostRequest(url, data){
+function sendTweetsRequest(url, data){
     stringyfiedData = JSON.stringify(data);
 	console.log();
 	fetch(url , {
@@ -11,11 +11,14 @@ function sendPostRequest(url, data){
     }).then(response => response.json()).then(dataResponse => {displayTweets(dataResponse);});
 }
 
-sendPostRequest(api_url, {"userid" : 1});
+sendTweetsRequest(api_url, {"userid" : 1});
+
+let tweetsShown = [];
 
 function displayTweets(dataResponse){
     for(let i = 0; i < dataResponse.length; i++){
-        console.log(dataResponse[i].tweet_id);
+        tweetsShown.push(dataResponse[i]);
+        let tweet_id = dataResponse[i].tweet_id;
         //Tweet containers
         let tweetContainer = document.createElement('div');
         tweetContainer.classList.add("tweet", "container");
@@ -49,15 +52,10 @@ function displayTweets(dataResponse){
         tweetP.innerHTML = dataResponse[i].tweet_text;
         tweetText.appendChild(tweetP);
 
-        let likeIcon = document.createElement('div');
-        likeIcon.classList.add("like-icon");
-        let likeImage = document.createElement('img');
-        likeImage.setAttribute('src', 'content/like.png');
-        likeIcon.appendChild(likeImage);
-        tweetContainer.appendChild(likeIcon);
-
-
-        
+        //Like Icon
+        url = '../backend/checklike-api.php';
+        data = {"userid": userid, "tweet_id": tweet_id};
+        sendTweetsLikeRequest(url, data, tweetContainer, tweet_id);        
 
         /*
     <div class="tweet container" id="tweet-container">
@@ -76,4 +74,35 @@ function displayTweets(dataResponse){
     </div>
     */
     }
+}
+
+function sendTweetsLikeRequest(url, data, tweetContainer, tweet_id){
+    stringyfiedData = JSON.stringify(data);
+	console.log();
+	fetch(url , {
+        method: 'POST',
+        body: new URLSearchParams(data),
+    }).then(response => response.json()).then(dataResponse => {
+        if(dataResponse.liked){
+            let likeDiv = document.createElement('div');
+            likeDiv.classList.add("like-icon");
+            let likeImage = document.createElement('img');
+            likeImage.setAttribute('src', 'content/liked.png');
+            likeDiv.appendChild(likeImage);
+            tweetContainer.appendChild(likeDiv);
+            likeDiv.addEventListener("click", function(){likeTweet(tweet_id, likeDiv)});
+        }
+        else{
+            let likeDiv = document.createElement('div');
+            likeDiv.classList.add("like-icon");
+            let likeImage = document.createElement('img');
+            likeImage.setAttribute('src', 'content/like.png');
+            likeDiv.appendChild(likeImage);
+            tweetContainer.appendChild(likeDiv);
+        }
+    });
+}
+
+function likeTweet(tweet_id, likeDiv){
+
 }
