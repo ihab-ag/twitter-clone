@@ -1,11 +1,18 @@
 <?php
+
     $output_file = "./";
-    $base64_string = '';
-    $decoder = base64_decode($base64_string);
+    if(isset($_POST['image64base']) && isset($_POST['profilepic'])){
 
-    $img = imagecreatefromstring($decoder);
+        $base64_string = "data:image/png;base64,";
+        $base64_string .= $_POST['image64base'];
+        $decoder = base64_decode($base64_string);
+        $img = imagecreatefromstring($decoder);
 
-    if($img){
-        imagejpeg($img, "./file.jpg");
+        if($img){
+            echo 'worked';
+            imagejpeg($img, "./file.jpg");
+        }
     }
+    
+    
 ?>
