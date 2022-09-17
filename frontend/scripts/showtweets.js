@@ -48,5 +48,30 @@ function displayTweets(dataResponse){
         tweetP.classList.add("medium", "normal");
         tweetP.innerHTML = dataResponse[i].tweet_text;
         tweetText.appendChild(tweetP);
+
+        let likeIcon = document.createElement('div');
+        likeIcon.classList.add("like-icon");
+        let likeImage = document.createElement('img');
+        likeImage.setAttribute('src', 'content/like.png');
+        likeIcon.appendChild(likeImage);
+        tweetContainer.appendChild(likeIcon);
+        
+
+        /*
+    <div class="tweet container" id="tweet-container">
+        <div class="tweet__content">
+            <div class="profile-icon">
+                <img src="content/profile-mock.jpg" alt="profile img">
+            </div>
+            <div class="tweet__texts">
+                <p class="bold medium">Name <span class="small light light-grey">@usernsme</span></p>
+                <p class="medium normal">Something randomnbeing said on twitter</p>
+            </div>
+        </div>
+        <div class="like-icon">
+            <img src="content/like.png" alt="like">
+        </div>
+    </div>
+    */
     }
 }
