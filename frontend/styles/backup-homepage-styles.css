@@ -12,25 +12,6 @@ html{
     font-family:  'Poppins', sans-serif;
 }
 
-/* Main divs */
-
-.main-container{
-    width: 80%;
-    height: 100%;
-    margin-left: 20%;
-}
-
-.main-flex{
-    display: flex;
-    width: 100%;
-}
-
-.main-feed{
-    width: 65%;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-}
-
 
 /* Side navigation bar */
 .sidenavbar{
@@ -85,4 +66,37 @@ html{
     fill: #1da1f2;
     margin-bottom: 15px;
     margin-top: 20px;
+}
+
+/* Main feed and search sidebar */
+.main-container{
+    width: 80%;
+    height: 100%;
+    margin-left: 20%;
+}
+
+.main-flex{
+    display: flex;
+    width: 100%;
+}
+
+.main-feed{
+    width: 65%;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.top-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    color: black;
+    font-size: 2rem;
+    font-weight: 400;
+    padding: 0 15px;
+    position: sticky;
+    top: 0;
+    background-color: white;
 }
