@@ -2,8 +2,7 @@ const username_search = document.getElementById("username-search");
 const search_results_div = document.getElementById("search-results");
 const loggedinUsername = JSON.parse(localStorage.getItem("loggedin")).username;
 const searchMainContainer = document.getElementById("search-results");
-const username = JSON.parse(localStorage.getItem("loggedin")).username;
-console.log(username);
+userid = JSON.parse(localStorage.getItem("loggedin")).userid;
 
 document.addEventListener("keyup", function(event) {
     if (event.key === 'Enter' && username_search.value != '') {
@@ -73,7 +72,8 @@ function InstantiateProfileCard(data){
 
     //CHECK IF FOLLOWING USER
     url = "../backend/checkfollowing-api.php";
-    data = {'username': username, 'tofollowusername': data[0].username};
+    data = {'userid': userid, 'tofollowuserid': data[0].id};
+    console.log(data);
     console.log(checkFollowingRequest(url, data, profileFollow));
 
     let followbtn2 = document.createElement("button");
