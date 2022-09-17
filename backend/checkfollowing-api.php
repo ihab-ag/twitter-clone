@@ -10,6 +10,11 @@
     
         $query = $mysqli->prepare("SELECT * FROM `followers` WHERE followers.user_id = (SELECT users.id FROM users WHERE username = ?)
                                     AND followers.followed_user_id = (SELECT users.id FROM users WHERE username = ?)");
+        $query->bind_param("ss", $username, $tofollowusername);
+        $query->execute();
+        $result = $query->get_result();
+        
+        $response = [];
 
     }
 ?>
