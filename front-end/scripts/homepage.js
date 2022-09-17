@@ -6,4 +6,10 @@ window.onload=()=>{
     const home= document.querySelector('.home');
     const profile= document.querySelector('.profile');
 
+    // functions
+    // show home
+    const showHome=()=>{
+        profile.style.display="none";
+        home.style.display="flex";
+    }
 }
