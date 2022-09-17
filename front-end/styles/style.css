@@ -128,6 +128,8 @@ input:focus{
     color: red;
     font-weight: 500;
     border-radius: 50px;
+    cursor: pointer;
+    display:none;
 }
 /* main */
 .main{
