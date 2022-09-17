@@ -5,8 +5,6 @@
     include 'connection.php';
     if(isset($_POST['username'])){
         $username = $_POST['username'];
-        echo $username;
-        $username = $_POST['username'];
     
         $query = $mysqli->prepare("SELECT * FROM `users` WHERE username = ?");
 
