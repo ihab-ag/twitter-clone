@@ -389,6 +389,26 @@ input[type="file"]{
         height:100%;
         border-radius: 10px;
     }
+    .profile-follow{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .profile-follow .btn{
+        padding:2% ;
+        width:30%;
+    }
+    .search-result{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border-bottom: solid 1px;
+        margin-bottom: 25px;
+    }
+    .search-result .nav-card{
+        gap: 5px;
+    }
 /* media queries */
 @media screen and (min-width:650px) {
     /* utelities */
