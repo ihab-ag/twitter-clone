@@ -222,8 +222,7 @@ h3 {
     justify-content: center;
     flex-direction: column;
     border-radius: 10px;
-    background-color: green;
-    box-shadow: #1f94dd;
+    background-color: #1f94dd;
 }
 
 .red-div{
@@ -234,7 +233,6 @@ h3 {
     flex-direction: column;
     border-radius: 10px;
     background-color: red;
-    box-shadow: #1f94dd;
 }
 
 @media(max-width: 1000px) {
