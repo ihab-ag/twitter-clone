@@ -15,7 +15,7 @@ sendPostRequest(api_url, {"userid" : 1});
 
 function displayTweets(dataResponse){
     for(let i = 0; i < dataResponse.length; i++){
-
+        console.log(dataResponse[i].tweet_id);
         //Tweet containers
         let tweetContainer = document.createElement('div');
         tweetContainer.classList.add("tweet", "container");
@@ -55,6 +55,8 @@ function displayTweets(dataResponse){
         likeImage.setAttribute('src', 'content/like.png');
         likeIcon.appendChild(likeImage);
         tweetContainer.appendChild(likeIcon);
+
+
         
 
         /*
