@@ -7,12 +7,13 @@ window.onload=()=>{
     const profile= document.querySelector('.profile');
     const searchBar= document.querySelector('.search-bar');  
     const main= document.querySelector('.main');  
+    const body=document.getElementsByTagName('body')[0];
 
     // functions
     // show home
     const showHome=()=>{
         profile.style.display="none";
-        home.style.display="flex";
+        home.style.display="block";
         showMain();
     }
     // show profile
@@ -24,9 +25,12 @@ window.onload=()=>{
     // show main
     const showMain=()=>{
         const smallScreen = window.matchMedia("(max-width: 650px)");
-        if(smallScreen){
+        if(smallScreen.matches){
             searchBar.style.display='none';
-            main.style.display='block';
+            main.style.display='flex';
+        }
+        else{
+            searchBar.style.display='flex';
         }
     }
     // show search
@@ -37,5 +41,6 @@ window.onload=()=>{
     // main
     homeNav.onclick=()=>showHome();
     profileNav.onclick=()=>showProfile();
-    
+    searchNav.onclick=()=>showSearch();
+    body.onresize=()=>showMain();
 }
