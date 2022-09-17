@@ -100,3 +100,18 @@ html{
     top: 0;
     background-color: white;
 }
+
+/* Tweet Feed */
+.new-tweet{
+    display: flex;
+    width: 100%;
+    height: 120px;
+    padding: 4px 16px;
+}
+
+.new-tweet img{
+    width: 48px;
+    height: 50px;
+    cursor:pointer;
+    border-radius: 50%;
+}
