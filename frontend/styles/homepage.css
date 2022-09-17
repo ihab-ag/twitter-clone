@@ -50,6 +50,9 @@ img{
     color:white;
     cursor: pointer;
 }
+.btn-red{
+    background-color: #fb4242;
+}
 .disabled{
     background-color: #60bbf3;
 }
@@ -395,9 +398,13 @@ input[type="file"]{
         justify-content: space-between;
         align-items: center;
     }
+    .profile-follow .stack{
+        width:30%;
+        gap:2px;
+    }
     .profile-follow .btn{
         padding:2% ;
-        width:30%;
+        width:100%;
     }
     .search-result{
         display: flex;
@@ -407,6 +414,7 @@ input[type="file"]{
         margin-bottom: 25px;
     }
     .search-result .nav-card{
+        justify-content: start;
         gap: 5px;
     }
 /* media queries */
