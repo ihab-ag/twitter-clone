@@ -13,11 +13,8 @@
         $result = $query->get_result();
         
         $response = [];
-        if($result->fetch_assoc()){
-            $response["found"] = true;
-        }
-        else{
-            $response["found"] = false;
+        while($a = $result->fetch_assoc()){
+            $response[] = $a;
         }
         
         $json = json_encode($response);
