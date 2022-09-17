@@ -5,12 +5,12 @@
     include("connection.php");
     
     if(isset($_POST['userid']) && isset($_POST['tofollowuserid'])){
-        $username = $_POST['userid'];
-        $tofollowusername = $_POST['tofollowuserid'];
+        $userid = $_POST['userid'];
+        $tofollowuserid = $_POST['tofollowuserid'];
     
-        $query = $mysqli->prepare("SELECT * FROM `followers` WHERE followers.user_id = (SELECT users.id FROM users WHERE username = ?)
-                                    AND followers.followed_user_id = (SELECT users.id FROM users WHERE username = ?)");
-        $query->bind_param("ss", $username, $tofollowusername);
+        $query = $mysqli->prepare("SELECT * FROM `followers` WHERE followers.user_id = ?
+                                    AND followers.followed_user_id = ?");
+        $query->bind_param("ss", $userid, $tofollowuserid);
         $query->execute();
         $result = $query->get_result();
         
