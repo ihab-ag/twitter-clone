@@ -27,6 +27,11 @@ window.onload=()=>{
             main.style.display='block';
         }
     }
+    // show search
+    const showSearch=()=>{
+        searchBar.style.display='flex';
+        main.style.display='none';
+    }
     // main
     homeNav.onclick=()=>showHome();
     profileNav.onclick=()=>showProfile();
