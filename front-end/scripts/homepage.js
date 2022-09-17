@@ -19,4 +19,5 @@ window.onload=()=>{
     }
     // main
     homeNav.onclick=()=>showHome();
+    profileNav.onclick=()=>showProfile();
 }
