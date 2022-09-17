@@ -12,4 +12,6 @@ window.onload=()=>{
         profile.style.display="none";
         home.style.display="flex";
     }
+    // main
+    homeNav.onclick=()=>showHome();
 }
