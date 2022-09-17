@@ -115,3 +115,34 @@ html{
     cursor:pointer;
     border-radius: 50%;
 }
+
+.new-tweet-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-top: 4px;
+    width: 100%;
+    margin-left: 12px;
+}
+
+.new-tweet-actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+}
+
+.new-tweet-actions ul{
+    display: flex;
+    list-style: none;
+}
+
+.new-tweet-actions ul li{
+    margin-right: 12px;
+    color: #1c88d2;
+    cursor: pointer;
+}
+
+
+
