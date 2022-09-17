@@ -31,6 +31,8 @@ html{
     border-right: 1px solid black;
 }
 
+
+/* Side navigation bar */
 .sidenavbar{
     top: 1px;
     left: 1px;
@@ -40,3 +42,34 @@ html{
     flex-direction: column;
     font-weight: 700;
 }
+
+.sidenavbar ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidenavbar ul li:hover{
+    border-radius: 10px;
+    background-color: lightblue;
+}
+
+.sidenavbar ul li{
+    padding: 10px 10px;
+    display: flex;
+    width: 100%;
+    cursor: pointer;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.sidenavbar button{
+    width: 200px;
+}
+
+.nav-text{
+    font-size: 2rem;
+    margin: 0;
+}
+
