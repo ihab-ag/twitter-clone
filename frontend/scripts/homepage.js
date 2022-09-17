@@ -62,7 +62,7 @@ window.onload=()=>{
         if(e.target.className=="tweet-box__bg")
         hideTweetBox();
     }
-    tweetInput.onkeydown=()=>{
+    tweetInput.onkeyup=()=>{
         wordCounter.innerText=tweetInput.value.length;
         tweetInput.style.color= tweetInput.value.length>280?'red':"#666666";
     }
