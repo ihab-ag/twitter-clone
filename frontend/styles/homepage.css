@@ -272,6 +272,9 @@ input:focus{
     cursor:pointer;
     flex-shrink: 0;
 }
+.tweet__withimg .tweet{
+    border-bottom: none;
+}
 /* tweet box */
 .tweet-box{
     position:fixed;
