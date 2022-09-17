@@ -279,6 +279,7 @@ input:focus{
     display: flex;
     flex-direction: column;
 }
+
 /* tweet box */
 .tweet-box{
     position:fixed;
