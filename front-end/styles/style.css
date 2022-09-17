@@ -323,6 +323,9 @@ input:focus{
     height:150px;
     outline: none;
 }
+input[type="file"]{
+    display: none;
+}
 .img-input{
     height:35px;
     border: none;

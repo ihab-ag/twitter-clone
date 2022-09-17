@@ -64,5 +64,6 @@ window.onload=()=>{
     }
     tweetInput.onkeydown=()=>{
         wordCounter.innerText=tweetInput.value.length;
+        tweetInput.style.color= tweetInput.value.length>280?'red':"#666666";
     }
 }
