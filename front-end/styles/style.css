@@ -340,7 +340,7 @@ input:focus{
         display: flex;
         flex-direction: column;
         gap:15px;
-        /* display:none; */
+        display:none;
         width:65%;
         position:fixed;
         right:0;

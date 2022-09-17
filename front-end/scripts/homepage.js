@@ -5,6 +5,8 @@ window.onload=()=>{
     const profileNav = document.getElementById('profileNav');
     const home= document.querySelector('.home');
     const profile= document.querySelector('.profile');
+    const searchBar= document.querySelector('.search-bar');  
+    const main= document.querySelector('.main');  
 
     // functions
     // show home
@@ -17,7 +19,16 @@ window.onload=()=>{
         home.style.display="none";
         profile.style.display="block";
     }
+    // show main
+    const showMain=()=>{
+        const smallScreen = window.matchMedia("(max-width: 650px)");
+        if(smallScreen){
+            searchBar.style.display='none';
+            main.style.display='block';
+        }
+    }
     // main
     homeNav.onclick=()=>showHome();
     profileNav.onclick=()=>showProfile();
+    
 }
