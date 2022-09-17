@@ -4,5 +4,9 @@ fileInput.addEventListener("change", e => {
     const file = fileInput.files[0];
     const reader = new FileReader();
 
-    console.log(file);
+    reader.addEventListener("load", () => {
+        console.log(reader.result);
+    })
+
+    reader.readAsDataURL(file);
 })
