@@ -9,7 +9,7 @@ window.onload=()=>{
     const main= document.querySelector('.main');  
     const body=document.getElementsByTagName('body')[0];
     const tweetBtn=document.getElementById('tweetBtn'); 
-    const tweetBoxBg=document.querySelector('tweet-box__bg');
+    const tweetBoxBg=document.querySelector('.tweet-box__bg');
 
     // functions
     // show home
@@ -49,4 +49,6 @@ window.onload=()=>{
     profileNav.onclick=()=>showProfile();
     searchNav.onclick=()=>showSearch();
     body.onresize=()=>showMain();
+    tweetBtn.onclick=()=>showTweetBox();
+    home.onclick=()=>showTweetBox();
 }
