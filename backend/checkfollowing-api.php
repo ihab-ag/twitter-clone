@@ -15,6 +15,14 @@
         $result = $query->get_result();
         
         $response = [];
-
+        if($result->fetch_assoc()){
+            $response["following"] = true;
+        }
+        else{
+            $response["following"] = false;
+        }
+        //$response[]
+        $json = json_encode($response);
+        echo $json;
     }
 ?>
