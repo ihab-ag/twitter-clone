@@ -10,6 +10,7 @@ window.onload=()=>{
     const body=document.getElementsByTagName('body')[0];
     const tweetBtn=document.getElementById('tweetBtn'); 
     const tweetBoxBg=document.querySelector('.tweet-box__bg');
+    const tweetBox=document.querySelector('.tweet-box');
 
     // functions
     // show home
@@ -48,11 +49,16 @@ window.onload=()=>{
     const hideTweetBox=()=>{
         tweetBoxBg.style.display='none';
     }
-    // main
+    // events
     homeNav.onclick=()=>showHome();
     profileNav.onclick=()=>showProfile();
     searchNav.onclick=()=>showSearch();
     body.onresize=()=>showMain();
     tweetBtn.onclick=()=>showTweetBox();
     home.onclick=()=>showTweetBox();
+    tweetBoxBg.onclick=(e)=>{
+        if(e.target.className=="tweet-box__bg")
+        hideTweetBox();
+    }
+    
 }
