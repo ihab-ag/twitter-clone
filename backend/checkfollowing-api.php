@@ -4,9 +4,9 @@
     header('Content-Type: application/json');
     include("connection.php");
     
-    if(isset($_POST['username']) && isset($_POST['tofollowusername'])){
-        $username = $_POST['username'];
-        $tofollowusername = $_POST['tofollowusername'];
+    if(isset($_POST['userid']) && isset($_POST['tofollowuserid'])){
+        $username = $_POST['userid'];
+        $tofollowusername = $_POST['tofollowuserid'];
     
         $query = $mysqli->prepare("SELECT * FROM `followers` WHERE followers.user_id = (SELECT users.id FROM users WHERE username = ?)
                                     AND followers.followed_user_id = (SELECT users.id FROM users WHERE username = ?)");

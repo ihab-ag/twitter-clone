@@ -69,14 +69,12 @@ function InstantiateProfileCard(data){
     stack.appendChild(p2);
 
     //Button
-    let followbtn = document.createElement("button");
-    followbtn.classList.add("btn");
-    profileFollow.appendChild(followbtn);
+
 
     //CHECK IF FOLLOWING USER
     url = "../backend/checkfollowing-api.php";
-    checkFollowingRequest(url, {'username': username,
-                                'tofollowusername': data[0].username});
+    data = {'username': username, 'tofollowusername': data[0].username};
+    console.log(checkFollowingRequest(url, data, profileFollow));
 
     let followbtn2 = document.createElement("button");
     followbtn2.classList.add("btn");
@@ -109,12 +107,25 @@ function InstantiateProfileCard(data){
     */
 }
 
-function checkFollowingRequest(url, data){
+function checkFollowingRequest(url, data, profileFollow){
     stringyfiedData = JSON.stringify(data);
-	console.log();
 	fetch(url , {
         method: 'POST',
         body: new URLSearchParams(data),
-    }).then(response => response.json()).then(dataResponse => {return dataResponse.following});
+    }).then(response => response.json()).then(dataResponse => 
+        {
+            if(dataResponse.following){
+                let followbtn = document.createElement("button");
+                followbtn.classList.add("btn");
+                followbtn.innerHTML = "Unfollow";
+                profileFollow.appendChild(followbtn);
+            }
+            else{
+                let followbtn = document.createElement("button");
+                followbtn.classList.add("btn");
+                followbtn.innerHTML = "Follow";
+                profileFollow.appendChild(followbtn);
+            }
+});
 }
 
