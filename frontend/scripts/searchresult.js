@@ -78,7 +78,7 @@ function InstantiateProfileCard(data){
     //CHECK IF FOLLOWING USER
     let urlF = "../backend/checkfollowing-api.php";
     let dataF = {'userid': userid, 'tofollowuserid': toFollowUserID};
-    checkFollowingRequest(urlF, dataF, stackBtn, toFollowUserID, toFollowUserName);
+    //checkFollowingRequest(urlF, dataF, stackBtn, toFollowUserID, toFollowUserName);
     console.log(data);
     let urlB = "../backend/checkblocking-api.php";
     let dataB = {'userid': userid, 'toblockuserid': toFollowUserID};
@@ -92,7 +92,7 @@ function InstantiateProfileCard(data){
     searchResult.appendChild(bio);
 }
 
-function checkFollowingRequest(url, data, stackBtn, toFollowUserID, toFollowUserName){
+function checkFollowingRequest(url, data, stackBtn, toFollowUserID, toFollowUserName, isblocking){
     stringyfiedData = JSON.stringify(data);
 	fetch(url , {
         method: 'POST',
@@ -114,7 +114,7 @@ function checkFollowingRequest(url, data, stackBtn, toFollowUserID, toFollowUser
                     setTimeout(function(){sendSearchRequest('../backend/search-api.php', {"username": toFollowUserName});}, 100);
                 })            
             }
-            else{
+            else if(!isblocking){
                 let followbtn = document.createElement("button");
                 followbtn.classList.add("btn");
                 followbtn.innerHTML = "Follow";
@@ -146,7 +146,11 @@ function checkBlockRequest(url, data, stackBtn, toBlockUserID, toBlockUsername){
         {
             let url = "../backend/blockuser-api.php";
             if(dataResponse.blocking){
-                
+                ////////////////////////////////////////
+                let urlF = "../backend/checkfollowing-api.php";
+                let dataF = {'userid': userid, 'tofollowuserid': toBlockUserID};
+                checkFollowingRequest(urlF, dataF, stackBtn, toBlockUserID, toBlockUsername, true);
+                ////////////////////////////////////////
                 let unblockbtn = document.createElement("button");
                 unblockbtn.classList.add("btn", "btn-red");
                 unblockbtn.innerHTML = "Unblock";
@@ -158,6 +162,11 @@ function checkBlockRequest(url, data, stackBtn, toBlockUserID, toBlockUsername){
                 })            
             }
             else{
+                ////////////////////////////////////////
+                let urlF = "../backend/checkfollowing-api.php";
+                let dataF = {'userid': userid, 'tofollowuserid': toBlockUserID};
+                checkFollowingRequest(urlF, dataF, stackBtn, toBlockUserID, toBlockUsername, false);
+                ////////////////////////////////////////
                 console.log("not blocking");
                 let blockbtn = document.createElement("button");
                 blockbtn.classList.add("btn", "btn-red");
