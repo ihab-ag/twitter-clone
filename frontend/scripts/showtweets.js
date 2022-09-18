@@ -53,8 +53,13 @@ function main(){
     
             let tweetN = document.createElement('p');
             tweetN.classList.add("medium", "bold");
-            tweetN.innerHTML = dataResponse[i].username;
+            tweetN.innerHTML =  dataResponse[i].fname + " " + dataResponse[i].lname + " ";
             tweetText.appendChild(tweetN);
+
+            let tweetUser = document.createElement('span');
+            tweetUser.classList.add("small", "light", "light-grey");
+            tweetUser.innerHTML = "@" + dataResponse[i].username;
+            tweetN.appendChild(tweetUser);
     
             let tweetP = document.createElement('p');
             tweetP.classList.add("medium", "normal");

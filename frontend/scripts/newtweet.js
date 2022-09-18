@@ -6,18 +6,17 @@ tweetBtn.addEventListener("click", e => {
     let userid = JSON.parse(localStorage.getItem("loggedin")).userid;
     let hasimage = tweetPic.files.length >= 1;
     hasimage = hasimage === true ? 1 : 0;
-    console.log(tweet_text, userid, hasimage);
-
 
     const url = "../backend/addtweet-api.php";
-    if(!hasimage){
+    if(!hasimage && tweetInput.value != ''){
         let data = {"tweet_text": tweet_text,
         "userid": userid,
         "hasimage": hasimage,
         };
         sendTweetRequest(url, data);
+        //tweetInput.value = "";
     }
-    else{
+    else if(tweetInput.value != ''){
         const fileInput = document.getElementById("img-input");
 
         //fileInput.addEventListener("change", e => {
@@ -38,13 +37,15 @@ tweetBtn.addEventListener("click", e => {
                 sendTweetRequest(url, data);
             })
             reader.readAsDataURL(file);
+            //tweetInput.value = "";
         //})
     }
+    
 })
 
 function sendTweetRequest(url, data){
     stringyfiedData = JSON.stringify(data);
-	console.log();
+	
 	fetch(url , {
         method: 'POST',
         body: new URLSearchParams(data),
