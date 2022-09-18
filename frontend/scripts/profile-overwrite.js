@@ -1,8 +1,11 @@
 const userImgLbl = document.getElementById('user-img');
 const nameInput = document.getElementById('nameInput');
 const bioInput = document.getElementById('bioInput');
+const navbar_username = document.getElementById('navbar-username');
+const navbar_name = document.getElementById('navbar-name');
+
 let userid = JSON.parse(localStorage.getItem("loggedin")).userid;
-console.log(userImgLbl, nameInput, bioInput);
+
 
 const applyBtn = document.getElementById("applyBtn");
 
@@ -72,6 +75,8 @@ function sendUserRequest(url, data){
         let userImg = document.getElementById('user-profile-pic');
         let userImg2 = document.getElementById('mainprofilepic'); 
         let userImg3 = document.getElementById('logoutpic');  
+        navbar_username.innerHTML = dataResponse[0].username;
+        navbar_name.innerHTML = dataResponse[0].fname;
         nameInput.value = dataResponse[0].fname;
         if(dataResponse[0].profile_pic != 'none'){
             userImg.setAttribute('src', dataResponse[0].profile_pic);

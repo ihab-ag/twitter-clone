@@ -1,6 +1,16 @@
 let tweetInput = document.getElementById("tweetInput");
 let tweetBtn = document.getElementById("new-tweet-btn");
 let tweetPic = document.getElementById("img-input"); 
+
+const logout = document.getElementById("logout");
+
+logout.addEventListener("click", e => {
+    window.localStorage.removeItem('loggedin');
+    if(localStorage.getItem("loggedin")){
+        window.location.href = "./homepage.html";
+    }
+})
+
 tweetBtn.addEventListener("click", e => {
     let tweet_text = tweetInput.value;
     let userid = JSON.parse(localStorage.getItem("loggedin")).userid;

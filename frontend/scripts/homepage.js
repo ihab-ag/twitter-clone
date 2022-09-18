@@ -110,5 +110,5 @@ window.onload=()=>{
             logout.style.display= logout.style.display==='block'?'none':'block';
         }
     }
-    newTweetBtn.onclick=()=>location.reload();
+    //newTweetBtn.onclick=()=>location.reload();
 }
