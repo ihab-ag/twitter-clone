@@ -258,8 +258,8 @@ input{
 .btn-apply{
     display:none;
 }
-.enabled{
-    border-bottom: solid 1px #179cf0;
+input:disabled{
+    background: white;
 }
 /* tweet */
 .tweet{
