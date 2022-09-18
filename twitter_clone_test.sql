@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 18, 2022 at 09:29 AM
+-- Generation Time: Sep 18, 2022 at 07:54 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -32,13 +32,6 @@ CREATE TABLE `blocked_users` (
   `blockinguserid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `blocked_users`
---
-
-INSERT INTO `blocked_users` (`userid`, `blockinguserid`) VALUES
-(13, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -49,6 +42,16 @@ CREATE TABLE `followers` (
   `user_id` int(11) NOT NULL,
   `followed_user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `followers`
+--
+
+INSERT INTO `followers` (`user_id`, `followed_user_id`) VALUES
+(13, 2),
+(14, 1),
+(19, 19),
+(20, 19);
 
 -- --------------------------------------------------------
 
@@ -66,13 +69,12 @@ CREATE TABLE `liked_tweets` (
 --
 
 INSERT INTO `liked_tweets` (`tweet_id`, `user_id`) VALUES
-(1, 1),
-(3, 1),
-(37, 1),
-(44, 13),
-(45, 13),
-(50, 13),
-(51, 13);
+(65, 20),
+(66, 19),
+(66, 20),
+(67, 19),
+(67, 20),
+(69, 20);
 
 -- --------------------------------------------------------
 
@@ -92,29 +94,13 @@ CREATE TABLE `tweets` (
 --
 
 INSERT INTO `tweets` (`id`, `users_id`, `tweet_text`, `picture_url`) VALUES
-(1, 1, 'This is the first tweet', 'none'),
-(2, 2, 'otheruser\'s tweet', 'none'),
-(3, 1, 'asdasd', 'none'),
-(16, 3, 'third tweet', 'none'),
-(30, 1, 'postman test', 'none'),
-(31, 1, 'asdasdasd', 'none'),
-(37, 1, 'test image', '../frontend/content/uploadedimages/2eceebb2bb3c80aa771ba18e93ecb8e4.jpg'),
-(38, 1, 'l3ama', '../frontend/content/uploadedimages/b577a767093d9524a1e3ba10651b65d6.jpg'),
-(39, 13, 'asd', 'none'),
-(40, 13, 'asdasd', 'none'),
-(41, 13, 'asdasd', 'none'),
-(42, 13, 'asdasd', 'none'),
-(43, 13, 'sasd', 'none'),
-(44, 13, 'sasd', 'none'),
-(45, 13, 'sasd', 'none'),
-(46, 13, 'sasd', 'none'),
-(47, 13, 'asd', 'none'),
-(48, 13, 'req', 'none'),
-(49, 13, 'sasdasdddddddddddddddddddsadddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsasdasdddddddddddddddddddsadddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsasdasdddddddddddddddddddsadddddddddddddddddddddddddddddddd', 'none'),
-(50, 13, 'asd', 'none'),
-(51, 13, 'asdtest noqw', 'none'),
-(52, 13, 'astest', '../frontend/content/uploadedimages/2eceebb2bb3c80aa771ba18e93ecb8e4.jpg'),
-(53, 13, 'test iamge 9/18/2022', '../frontend/content/uploadedimages/3cf28d0f89755ae5d872073222e15c27.jpg');
+(65, 19, 'test', 'none'),
+(66, 19, 'asddsa', 'none'),
+(67, 19, 'test 222', 'none'),
+(68, 20, 'My tweet, tested now', 'none'),
+(69, 20, 'tweet test', '../frontend/content/uploadedimages/2eceebb2bb3c80aa771ba18e93ecb8e4.jpg'),
+(70, 20, 'asd', 'none'),
+(71, 20, 'another test', 'none');
 
 -- --------------------------------------------------------
 
@@ -128,6 +114,8 @@ CREATE TABLE `users` (
   `fname` varchar(255) NOT NULL,
   `lname` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `bio` varchar(255) NOT NULL,
+  `profile_pic` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `tweet_count` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -136,14 +124,9 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `fname`, `lname`, `email`, `password`, `tweet_count`) VALUES
-(1, 'kroozeraid', 'moh', 'nas', 'kroozeraid@gmail.com', 'thepass', 0),
-(2, 'otheruser', 'ihab', 'last', 'other@email.com', 'thepassword', 0),
-(3, 'third', 'john', 'doe', 'third@email.com', 'password', 0),
-(10, 'croozer', '', '', 'croozer@gmail.com', 'asdasd', 0),
-(11, 'test', 'test', 'test', 'test', 'test', 0),
-(12, 'otheruser2', 'asd', '', 'asd@gmail.com', 'ba3c83348bddf7b368b478ac06d3340e', 0),
-(13, 'kroozeraid2', 'asd', 'asd', 'asd2@gmail.com', 'a8f5f167f44f4964e6c998dee827110c', 0);
+INSERT INTO `users` (`id`, `username`, `fname`, `lname`, `email`, `bio`, `profile_pic`, `password`, `tweet_count`) VALUES
+(19, 'croozer', 'asd', 'Nassar', 'kroozeraid2@gmail.com', 'bio', '../frontend/content/uploadedimages/875ee9a2699bbea645d00932fca312b0.jpg', '1a1dc91c907325c69271ddf0c944bc72', 0),
+(20, 'seconduser', 'Display name', 'user', 'second@gmail.com', 'Bio', '../frontend/content/uploadedimages/3cf28d0f89755ae5d872073222e15c27.jpg', '5f4dcc3b5aa765d61d8327deb882cf99', 0);
 
 --
 -- Indexes for dumped tables
@@ -187,13 +170,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `tweets`
 --
 ALTER TABLE `tweets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
