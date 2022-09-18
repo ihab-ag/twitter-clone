@@ -106,5 +106,5 @@ window.onload=()=>{
     applyBtn.onclick=()=>onApply();
     // toggle logout menu
     navMenu.onclick=()=>logout.style.display= logout.style.display==='block'?'none':'block';
-    //newTweetBtn.onclick=()=>location.reload();
+    newTweetBtn.onclick=()=>location.reload();
 }
