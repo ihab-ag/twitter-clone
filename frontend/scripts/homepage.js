@@ -10,7 +10,7 @@ window.onload=()=>{
     const body=document.getElementsByTagName('body')[0];
     const tweetBtn=document.getElementById('tweetBtn'); 
     const tweetBoxBg=document.querySelector('.tweet-box__bg');
-    const tweetBox=document.querySelector('.tweet-box');
+    const newTweetBtn=document.getElementById('new-tweet-btn');
     const tweetInput =document.getElementById('tweetInput');
     const wordCounter=document.getElementById('wordCounter');
     const userImgLbl=document.getElementById('userImgLbl');
@@ -106,4 +106,5 @@ window.onload=()=>{
     applyBtn.onclick=()=>onApply();
     // toggle logout menu
     navMenu.onclick=()=>logout.style.display= logout.style.display==='block'?'none':'block';
+    newTweetBtn.onclick=()=>location.reload();
 }
