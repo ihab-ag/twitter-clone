@@ -57,7 +57,7 @@ function main(isProfile){
             tweetContent.appendChild(tweetPicture);
     
             let tweetImg = document.createElement('img');
-            tweetImg.setAttribute("src", 'content/profile-mock.jpg');
+            tweetImg.setAttribute("src", dataResponse[i].profile_pic);
             tweetPicture.appendChild(tweetImg);
     
             //Tweet text
