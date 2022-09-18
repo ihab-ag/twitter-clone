@@ -5,18 +5,18 @@
         extract($_POST);
 
         
-        if(!isset($POST['profile_pic'])){
+        if(!isset($_POST['profile_pic'])){
             $query = $mysqli->prepare("UPDATE `users` SET `fname` = ?, `bio` = ?, `profile_pic` = ? WHERE `users`.`id` = ?");
             $null = 'none';
             $query->bind_param("sssi", $fname, $bio, $null, $userid);
         }
-        else if(isset($_POST['profile_pic'])){
+        else{
             $name = md5($profile_pic);
             $base64_string = $profile_pic;
             //echo $base64_string;
             $decoder = base64_decode($base64_string);
             $img = imagecreatefromstring($decoder);
-    
+            //echo $decoder;
             if($img){
                 //echo 'worked';
                 $url = '../frontend/content/uploadedimages/' . $name . ".jpg";
@@ -28,7 +28,7 @@
             }
         }
         $query->execute();
-        $response['tweetadded'] = true;
+        $response['editeduser'] = true;
         $json = json_encode($response);
         echo $json;
     }
