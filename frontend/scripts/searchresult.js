@@ -59,7 +59,7 @@ function InstantiateProfileCard(data){
 
     //Stack
     let stack = document.createElement('div');
-    navCard.classList.add("stack");
+    stack.classList.add("stack");
     navCard.appendChild(stack);
     let p1 = document.createElement('p');
     p1.classList.add("large", "bold");
@@ -71,18 +71,20 @@ function InstantiateProfileCard(data){
     stack.appendChild(p2);
 
     //Button
-
+    let stackBtn = document.createElement('div');
+    stackBtn.classList.add("stack");
+    profileFollow.appendChild(stackBtn);
 
     //CHECK IF FOLLOWING USER
     url = "../backend/checkfollowing-api.php";
     data = {'userid': userid, 'tofollowuserid': toFollowUserID};
     console.log(data);
-    console.log(checkFollowingRequest(url, data, profileFollow, toFollowUserID, toFollowUserName));
+    console.log(checkFollowingRequest(url, data, stackBtn, toFollowUserID, toFollowUserName));
 
-    let followbtn2 = document.createElement("button");
+    /*let followbtn2 = document.createElement("button");
     followbtn2.classList.add("btn");
     followbtn2.innerText = "Block";
-    profileFollow.appendChild(followbtn2);
+    profileFollow.appendChild(followbtn2);*/
 
     //Bio
     let bio = document.createElement("p");
@@ -91,7 +93,7 @@ function InstantiateProfileCard(data){
     searchResult.appendChild(bio);
 }
 
-function checkFollowingRequest(url, data, profileFollow, toFollowUserID, toFollowUserName){
+function checkFollowingRequest(url, data, stackBtn, toFollowUserID, toFollowUserName){
     stringyfiedData = JSON.stringify(data);
 	fetch(url , {
         method: 'POST',
@@ -100,10 +102,17 @@ function checkFollowingRequest(url, data, profileFollow, toFollowUserID, toFollo
         {
             let url = "../backend/follow-api.php";
             if(dataResponse.following){
+                //block button
+                /*let followbtn2 = document.createElement("button");
+                followbtn2.classList.add("btn");
+                followbtn2.innerText = "Block";
+                profileFollow.appendChild(followbtn2);*/
+
+
                 let unfollowbtn = document.createElement("button");
                 unfollowbtn.classList.add("btn");
                 unfollowbtn.innerHTML = "Unfollow";
-                profileFollow.appendChild(unfollowbtn);
+                stackBtn.appendChild(unfollowbtn);
                 unfollowbtn.addEventListener("click", e => {
                     let data = {"userid": userid, "tofollowuserid": toFollowUserID, "todo": "unfollow"};
                     followUser(url, data);
@@ -114,7 +123,7 @@ function checkFollowingRequest(url, data, profileFollow, toFollowUserID, toFollo
                 let followbtn = document.createElement("button");
                 followbtn.classList.add("btn");
                 followbtn.innerHTML = "Follow";
-                profileFollow.appendChild(followbtn);
+                stackBtn.appendChild(followbtn);
                 followbtn.addEventListener("click", e => {
                     let data = {"userid": userid, "tofollowuserid": toFollowUserID, "todo": "follow"};
                     followUser(url, data);
