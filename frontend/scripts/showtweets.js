@@ -1,5 +1,5 @@
-const tweetsContainer = document.getElementById("main");
-const api_url = "../backend/select_tweets-api.php";
+const tweetsContainer = document.getElementById("tweets-section");
+let api_url = "../backend/select_tweets-api.php";
 
 
 if(!localStorage.getItem("loggedin")){
@@ -9,7 +9,14 @@ if(!localStorage.getItem("loggedin")){
     main();
 }
 
-function main(){
+const profileNav = document.getElementById('profileNav');
+
+profileNav.addEventListener("click", function(){main(true)});
+
+function main(isProfile){
+    if(isProfile){
+        api_url = '../backend/getusertweets-api.php';
+    }
     let userid = JSON.parse(localStorage.getItem("loggedin")).userid;
     function sendTweetsRequest(url, data){
         stringyfiedData = JSON.stringify(data);
@@ -25,6 +32,7 @@ function main(){
     let tweetsShown = [];
     
     function displayTweets(dataResponse){
+        tweetsContainer.innerHTML = "";
         for(let i = 0; i < dataResponse.length; i++){
             tweetsShown.push(dataResponse[i]);
             let tweet_id = dataResponse[i].tweet_id;
