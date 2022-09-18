@@ -29,13 +29,9 @@
                 $query->bind_param("sss", $userid, $tweet_text, $url);
             }
         }
-            
-        
         $query->execute();
         $response['tweetadded'] = true;
         $json = json_encode($response);
         echo $json;
     }
-
-
 ?>
