@@ -5,18 +5,11 @@ const searchMainContainer = document.getElementById("search-results");
 userid = JSON.parse(localStorage.getItem("loggedin")).userid;
 console.log(userid);
 
-/*ocument.addEventListener("keyup", function(event) {
-    if (event.onkeyup === 'Enter' && username_search.value != '') {
-        sendSearchRequest('../backend/search-api.php', {username: username_search.value,
-                                                        'userid': userid});
-    }
-});*/
-
 username_search.onkeyup=()=>{
     if (username_search.value != '') {
         sendSearchRequest('../backend/search-api.php', {username: username_search.value,
                                                         'userid': userid});
-}
+    }
 }
 
 function sendSearchRequest(url, data){
