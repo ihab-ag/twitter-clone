@@ -35,10 +35,11 @@
         }
     }
 
-    if($response['emailfound'] == false && $response["usernamefound"] == false && isset($_POST['password'])){
-        $query = $mysqli->prepare("INSERT INTO `users` (`id`, `username`, `email`, `password`, `tweet_count`) 
-                                    VALUES (NULL, ?, ?, ?, '0');");
-        $query->bind_param("sss", $username, $email, $password);
+    if($response['emailfound'] == false && $response["usernamefound"] == false && isset($_POST['password']) && isset($_POST['fname']) && isset($_POST['lname'])){
+        $query = $mysqli->prepare("INSERT INTO `users` (`id`, `username`, `fname`, `lname`, `email`, `password`, `tweet_count`) 
+        VALUES (NULL, ?, ?, ?, ?, ?, '0');");
+        $hasedpass = md5($password);
+        $query->bind_param("sssss", $username, $fname, $lname, $email, $hasedpass);
         $query->execute();
         $result = $query->get_result();
         $response['useradded'] = true;

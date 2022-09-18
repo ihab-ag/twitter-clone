@@ -20,6 +20,8 @@ const error_login = document.getElementById("error-login");
 //Document values signup-from
 const username_signup = document.getElementById("username-signup");
 const password_signup = document.getElementById("password-signup");
+const fname_signup = document.getElementById("fname-signup");
+const lname_signup = document.getElementById("lname-signup");
 const email_signup = document.getElementById("email-signup");
 const signupErrorDiv = document.getElementById("error-signup");
 
@@ -98,8 +100,14 @@ function checkLogin(data){
 //Signup functionality
 function signupUser(){
     let error_message = "";
-    if(!validateUsername(username_signup.value)){
-        error_message += "Name is too short! (Minimum 7 characaters) <br>"
+    if(!validateUsername(username_signup.value, 7)){
+        error_message += "Username is too short! (Minimum 7 characaters) <br>"
+    }
+    if(!validateUsername(fname_signup.value, 3)){
+        error_message += "Last name is too short! (Minimum 3 characaters) <br>"
+    }
+    if(!validateUsername(lname_signup.value, 3)){
+        error_message += "First name is too short! (Minimum 3 characaters) <br>"
     }
     if(!validateEmail(email_signup.value)){
         error_message += "Email is incorrect! <br>";
@@ -113,7 +121,9 @@ function signupUser(){
         signupErrorDiv.innerHTML = "";
         sendRegisterRequest("../backend/userexists-api.php", {"username": username_signup.value,
                                                               "email": email_signup.value,
-                                                              "password": password_signup.value});
+                                                              "password": password_signup.value,
+                                                              "fname": fname_signup.value,
+                                                              "lname": lname_signup.value});
     }
     //console.log(error_message);
 }
@@ -138,10 +148,10 @@ function registerResponse(usernamefound, emailfound, added){
     }
     else{
         if(usernamefound){
-            error_message += "Username already taken! + <br>";
+            error_message += "Username already taken! <br>";
         }
         if(emailfound){
-            error_message += "Email already taken! + <br>";
+            error_message += "Email already taken! <br>";
         }
         signupErrorDiv.classList.add("red-div");
         signupErrorDiv.classList.remove("hidden");
@@ -151,8 +161,8 @@ function registerResponse(usernamefound, emailfound, added){
 }
 
 //Validation functions
-function validateUsername(username) {
-    if(username.length < 7){
+function validateUsername(username, length) {
+    if(username.length < length){
         return false;
     }
     return true;
