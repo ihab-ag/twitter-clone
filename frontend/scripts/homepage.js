@@ -58,7 +58,6 @@ window.onload=()=>{
     }
     // edit functionality
     const onEdit=()=>{
-        console.log('editing');
         // toggle buttons display
         editBtn.style.display='none';
         applyBtn.style.display='block';
@@ -70,6 +69,20 @@ window.onload=()=>{
         userImgLbl.style.borderBottom="solid #179cf0";
         nameInput.style.borderBottom="solid 1px #179cf0";
         bioInput.style.borderBottom="solid 1px #179cf0";
+    }
+    // after apply events
+    const onApply=()=>{
+        // toggle buttons display
+        editBtn.style.display='block';
+        applyBtn.style.display='none';
+        // enable inputs
+        userImg.disabled=true;
+        nameInput.disabled=true;
+        bioInput.disabled=true;
+        // style
+        userImgLbl.style.borderBottom="solid #ffffff";
+        nameInput.style.borderBottom="none";
+        bioInput.style.borderBottom="none";
     }
     // events
     homeNav.onclick=()=>showHome();
@@ -87,4 +100,5 @@ window.onload=()=>{
         tweetInput.style.color= tweetInput.value.length>280?'red':"#666666";
     }
     editBtn.onclick=()=>onEdit();
+    applyBtn.onclick=()=>onApply();
 }
