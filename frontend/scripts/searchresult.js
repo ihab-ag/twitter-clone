@@ -91,7 +91,7 @@ function InstantiateProfileCard(data){
     //Bio
     let bio = document.createElement("p");
     bio.classList.add("medium", "light", "grey");
-    bio.innerHTML = "bio lmao";
+    bio.innerHTML = data[0].bio;
     searchResult.appendChild(bio);
 }
 
