@@ -50,6 +50,9 @@ img{
     color:white;
     cursor: pointer;
 }
+.btn-red{
+    background-color: #fb4242;
+}
 .disabled{
     background-color: #60bbf3;
 }
@@ -210,6 +213,7 @@ input:focus{
     transform: translate(20%, -50%);
     border-radius: 50px;
     border: 4px solid white;
+    cursor:pointer;
 }
 .edit{
     display: flex;
@@ -243,6 +247,12 @@ input:focus{
     border-bottom: #179cf0 solid;
     transform: translateY(2px);
 }
+input{
+    border:none;
+}
+.enabled{
+    border-bottom: solid 1px #179cf0;
+}
 /* tweet */
 .tweet{
     display: flex;
@@ -268,6 +278,25 @@ input:focus{
     height: 26px;
     cursor:pointer;
     flex-shrink: 0;
+}
+.tweet__withimg .tweet{
+    border-bottom: none;
+}
+.tweet__withimg{
+    display: flex;
+    flex-direction: column;
+    border-bottom: solid 1px;
+}
+.tweet-img{
+    width:80%;
+    height:60%;
+    padding-top: 0;
+    padding-bottom: 0;
+    align-self: center;
+}
+.tweet-img img{
+    height:100%;
+    border-radius: 1%;
 }
 /* tweet box */
 .tweet-box{
@@ -344,6 +373,7 @@ input[type="file"]{
     justify-content: center;
     align-items: center;
     border-radius: 0 0 10px 10px;
+    cursor: pointer;
 }
     /* search bar */
     .search-bar{
@@ -395,9 +425,13 @@ input[type="file"]{
         justify-content: space-between;
         align-items: center;
     }
+    .profile-follow .stack{
+        width:30%;
+        gap:2px;
+    }
     .profile-follow .btn{
         padding:2% ;
-        width:30%;
+        width:100%;
     }
     .search-result{
         display: flex;
@@ -407,6 +441,7 @@ input[type="file"]{
         margin-bottom: 25px;
     }
     .search-result .nav-card{
+        justify-content: start;
         gap: 5px;
     }
 /* media queries */

@@ -94,24 +94,21 @@
                     <div class="profile__bg">
                         <img src="content/profile-mock.jpg" alt="profile-bg">
                     </div>
-                    <div class="profile-icon">
+                    <label for='user-img' class="profile-icon">
                         <img src="content/profile-mock.jpg" alt="profile img">
-                    </div>
+                    </label>
+                    <input type="file" id="user-img">
                 <div class="container">
                     <div class="edit">
                         <div>
-                            <p class="large bold">
-                                Name
-                            </p>
+                            <input type="text" class="large bold" value="Name">
                             <p class="small light light-grey">
                                 @username
                             </p>
                         </div>
                         <button class="btn">Edit</button>
                     </div>
-                    <p class="medium light light-grey">
-                        This is a twitter bio wriiten by a user
-                    </p>
+                    <input type="text" class="medium light light-grey" value="This is a twitter bio wriiten by a user">
                     <div class="follow-counter">
                         <p class="medium normal"><span class="bold medium">276</span> followers</p>
                         <p class="medium normal"><span class="bold medium">276</span> following</p>
@@ -132,6 +129,25 @@
                 </div>
                 <div class="like-icon">
                     <img src="content/like.png" alt="like">
+                </div>
+            </div>
+            <div class="tweet__withimg">
+                <div class="tweet container" id="tweet-container">
+                    <div class="tweet__content">
+                        <div class="profile-icon">
+                            <img src="content/profile-mock.jpg" alt="profile img">
+                        </div>
+                        <div class="tweet__texts">
+                            <p class="bold medium">Name <span class="small light light-grey">@usernsme</span></p>
+                            <p class="medium normal">Something randomnbeing said on twitter</p>
+                        </div>
+                    </div>
+                    <div class="like-icon">
+                        <img src="content/like.png" alt="like">
+                    </div>
+                </div>
+                <div class="tweet-img container">
+                    <img src="content/profile-mock.jpg" alt="tweet img">
                 </div>
             </div>
         </section>
@@ -155,7 +171,10 @@
                                 <p class="medium light grey">@username</p>
                             </div>
                         </div>
-                        <button class="btn">Follow</button>
+                        <div class="stack">
+                            <button class="btn">Follow</button>
+                            <button class="btn btn-red">Block</button>
+                        </div>
                     </div>
                     <p class="medium light-grey light">this is a user bio</p>
                 </div>
