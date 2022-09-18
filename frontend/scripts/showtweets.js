@@ -1,4 +1,6 @@
 const tweetsContainer = document.getElementById("tweets-section");
+const profileNav = document.getElementById('profileNav');
+const homeNav = document.getElementById('homeNav');
 let api_url = "../backend/select_tweets-api.php";
 
 
@@ -9,13 +11,17 @@ if(!localStorage.getItem("loggedin")){
     main();
 }
 
-const profileNav = document.getElementById('profileNav');
 
 profileNav.addEventListener("click", function(){main(true)});
+homeNav.addEventListener("click", function(){main(false)});
+
 
 function main(isProfile){
     if(isProfile){
         api_url = '../backend/getusertweets-api.php';
+    }
+    else{
+        api_url = "../backend/select_tweets-api.php";
     }
     let userid = JSON.parse(localStorage.getItem("loggedin")).userid;
     function sendTweetsRequest(url, data){
