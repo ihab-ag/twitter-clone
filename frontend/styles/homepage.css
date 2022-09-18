@@ -252,6 +252,9 @@ input:focus{
 input{
     border:none;
 }
+.btn-apply{
+    display:none;
+}
 .enabled{
     border-bottom: solid 1px #179cf0;
 }
