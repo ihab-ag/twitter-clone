@@ -13,7 +13,12 @@ window.onload=()=>{
     const tweetBox=document.querySelector('.tweet-box');
     const tweetInput =document.getElementById('tweetInput');
     const wordCounter=document.getElementById('wordCounter');
-
+    const userImgLbl=document.getElementById('userImgLbl');
+    const nameInput=document.getElementById('nameInput');
+    const bioInput=document.getElementById('bioInput');
+    const userImg=document.getElementById('user-img');
+    const editBtn=document.getElementById('editBtn');
+    const applyBtn=document.getElementById('applyBtn');
     // functions
     // show home
     function showHome() {
@@ -51,6 +56,34 @@ window.onload=()=>{
     const hideTweetBox=()=>{
         tweetBoxBg.style.display='none';
     }
+    // edit functionality
+    const onEdit=()=>{
+        // toggle buttons display
+        editBtn.style.display='none';
+        applyBtn.style.display='block';
+        // enable inputs
+        userImg.disabled=false;
+        nameInput.disabled=false;
+        bioInput.disabled=false;
+        // style
+        userImgLbl.style.borderBottom="solid #179cf0";
+        nameInput.style.borderBottom="solid 1px #179cf0";
+        bioInput.style.borderBottom="solid 1px #179cf0";
+    }
+    // after apply events
+    const onApply=()=>{
+        // toggle buttons display
+        editBtn.style.display='block';
+        applyBtn.style.display='none';
+        // enable inputs
+        userImg.disabled=true;
+        nameInput.disabled=true;
+        bioInput.disabled=true;
+        // style
+        userImgLbl.style.borderBottom="solid #ffffff";
+        nameInput.style.borderBottom="none";
+        bioInput.style.borderBottom="none";
+    }
     // events
     homeNav.onclick=()=>showHome();
     profileNav.onclick=()=>showProfile();
@@ -66,4 +99,6 @@ window.onload=()=>{
         wordCounter.innerText=tweetInput.value.length;
         tweetInput.style.color= tweetInput.value.length>280?'red':"#666666";
     }
+    editBtn.onclick=()=>onEdit();
+    applyBtn.onclick=()=>onApply();
 }
