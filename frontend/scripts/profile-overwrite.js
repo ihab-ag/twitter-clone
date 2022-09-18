@@ -82,5 +82,26 @@ function sendUserRequest(url, data){
     });
 }
 
+function sendFollowersFollowingRequest(url, data){
+    stringyfiedData = JSON.stringify(data);
+	
+	fetch(url , {
+        method: 'POST',
+        body: new URLSearchParams(data),
+    }).then(response => response.json()).then(dataResponse => {
+        let following_span = document.getElementById('following-span');
+        let followers_span = document.getElementById('followers-span');
+        followers_span.innerHTML = (Object.values(dataResponse.followersCount)[0]); 
+        following_span.innerHTML = (Object.values(dataResponse.followingCount)[0]); 
+
+
+    });
+}
+
+sendFollowersFollowingRequest("../backend/followers_following-api.php", {"userid": userid});
+
+//following-span
+
+
 
 
