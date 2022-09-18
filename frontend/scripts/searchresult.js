@@ -79,7 +79,7 @@ function InstantiateProfileCard(data){
     url = "../backend/checkfollowing-api.php";
     data = {'userid': userid, 'tofollowuserid': toFollowUserID};
     console.log(data);
-    console.log(checkFollowingRequest(url, data, stackBtn, toFollowUserID, toFollowUserName));
+    checkFollowingRequest(url, data, stackBtn, toFollowUserID, toFollowUserName);
 
     /*let followbtn2 = document.createElement("button");
     followbtn2.classList.add("btn");
@@ -102,13 +102,6 @@ function checkFollowingRequest(url, data, stackBtn, toFollowUserID, toFollowUser
         {
             let url = "../backend/follow-api.php";
             if(dataResponse.following){
-                //block button
-                /*let followbtn2 = document.createElement("button");
-                followbtn2.classList.add("btn");
-                followbtn2.innerText = "Block";
-                profileFollow.appendChild(followbtn2);*/
-
-
                 let unfollowbtn = document.createElement("button");
                 unfollowbtn.classList.add("btn");
                 unfollowbtn.innerHTML = "Unfollow";
