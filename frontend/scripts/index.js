@@ -105,10 +105,13 @@ function signupUser(){
         error_message += "Username is too short! (Minimum 7 characaters) <br>"
     }
     if(!validateUsername(fname_signup.value, 3)){
-        error_message += "Last name is too short! (Minimum 3 characaters) <br>"
+        error_message += "First name is too short! (Minimum 3 characaters) <br>"
     }
     if(!validateUsername(lname_signup.value, 3)){
-        error_message += "First name is too short! (Minimum 3 characaters) <br>"
+        error_message += "Last name is too short! (Minimum 3 characaters) <br>"
+    }
+    if(!validateUsername(password_signup.value, 8)){
+        error_message += "Passowrd is too weak! (Minimum 8 characaters) <br>"
     }
     if(!validateEmail(email_signup.value)){
         error_message += "Email is incorrect! <br>";

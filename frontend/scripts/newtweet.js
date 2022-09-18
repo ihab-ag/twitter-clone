@@ -6,9 +6,7 @@ const logout = document.getElementById("logout");
 
 logout.addEventListener("click", e => {
     window.localStorage.removeItem('loggedin');
-    if(localStorage.getItem("loggedin")){
-        window.location.href = "./homepage.html";
-    }
+    window.location.href = "./homepage.html";
 })
 
 tweetBtn.addEventListener("click", e => {
