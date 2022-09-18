@@ -19,6 +19,8 @@ window.onload=()=>{
     const userImg=document.getElementById('user-img');
     const editBtn=document.getElementById('editBtn');
     const applyBtn=document.getElementById('applyBtn');
+    const navMenu=document.querySelector('.nav-bar .nav-card');
+    const logout=document.getElementById('logout');
     // functions
     // show home
     function showHome() {
@@ -95,10 +97,13 @@ window.onload=()=>{
         if(e.target.className=="tweet-box__bg")
         hideTweetBox();
     }
+    // count words
     tweetInput.onkeyup=()=>{
         wordCounter.innerText=tweetInput.value.length;
         tweetInput.style.color= tweetInput.value.length>280?'red':"#666666";
     }
     editBtn.onclick=()=>onEdit();
     applyBtn.onclick=()=>onApply();
+    // toggle logout menu
+    navMenu.onclick=()=>logout.style.display= logout.style.display==='block'?'none':'block';
 }
