@@ -36,8 +36,8 @@
     }
     if(isset($response['emailfound']) && isset($response['usernamefound'])){
         if($response['emailfound'] == false && $response["usernamefound"] == false && isset($_POST['password']) && isset($_POST['fname']) && isset($_POST['lname'])){
-            $query = $mysqli->prepare("INSERT INTO `users` (`id`, `username`, `fname`, `lname`, `email`, `bio`, `password`, `tweet_count`) 
-            VALUES (NULL, ?, ?, ?, ?, 'Biography, edit in profile.', ?, '0');");
+            $query = $mysqli->prepare("INSERT INTO `users` (`id`, `username`, `fname`, `lname`, `email`, `bio`, `profile_pic`, `password`, `tweet_count`) 
+            VALUES (NULL, ?, ?, ?, ?, 'Biography, edit in profile.', 'none', ?, '0');");
             $hasedpass = md5($password);
             $query->bind_param("sssss", $username, $fname, $lname, $email, $hasedpass);
             $query->execute();
