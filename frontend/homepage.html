@@ -94,21 +94,22 @@
                     <div class="profile__bg">
                         <img src="content/profile-mock.jpg" alt="profile-bg">
                     </div>
-                    <label for='user-img' class="profile-icon">
+                    <label for='user-img' class="profile-icon" id="userImgLbl">
                         <img src="content/profile-mock.jpg" alt="profile img">
                     </label>
-                    <input type="file" id="user-img">
+                    <input type="file" id="user-img" disabled>
                 <div class="container">
                     <div class="edit">
                         <div>
-                            <input type="text" class="large bold" value="Name">
+                            <input type="text" class="large bold" value="Name" id="nameInput" disabled>
                             <p class="small light light-grey">
                                 @username
                             </p>
                         </div>
-                        <button class="btn">Edit</button>
+                        <button class="btn btn-grey" id="editBtn">Edit</button>
+                        <button class="btn btn-apply" id="applyBtn">Apply</button>
                     </div>
-                    <input type="text" class="medium light light-grey" value="This is a twitter bio wriiten by a user">
+                    <input id="bioInput"type="text" class="medium light light-grey" value="This is a twitter bio wriiten by a user" disabled>
                     <div class="follow-counter">
                         <p class="medium normal"><span class="bold medium">276</span> followers</p>
                         <p class="medium normal"><span class="bold medium">276</span> following</p>

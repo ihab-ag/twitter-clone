@@ -53,6 +53,10 @@ img{
 .btn-red{
     background-color: #fb4242;
 }
+.btn-grey{
+    background-color: #f6f6f6;
+    color: #3f4040;
+}
 .disabled{
     background-color: #60bbf3;
 }
@@ -223,8 +227,6 @@ input:focus{
     width: 100%;
 }
 .edit .btn{
-    background-color: #f6f6f6;
-    color: #3f4040;
     font-weight: 700;
     padding: 6px;
     width: 55px;
