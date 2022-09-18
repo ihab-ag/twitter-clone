@@ -9,7 +9,8 @@
         $password = $_POST['password'];
     
         $query = $mysqli->prepare("SELECT * FROM `users` WHERE username = ? AND password = ?");
-        $query->bind_param("ss", $username, $password);
+        $hashedpass = md5($password);
+        $query->bind_param("ss", $username, $hashedpass);
         $query->execute();
         $result = $query->get_result();
         
@@ -25,7 +26,7 @@
         else{
             $response["success"] = false;
         }
-        
+
         $json = json_encode($response);
         echo $json;
     }
