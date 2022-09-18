@@ -34,18 +34,17 @@
             $response["emailfound"] = false;
         }
     }
-
-    if($response['emailfound'] == false && $response["usernamefound"] == false && isset($_POST['password']) && isset($_POST['fname']) && isset($_POST['lname'])){
-        $query = $mysqli->prepare("INSERT INTO `users` (`id`, `username`, `fname`, `lname`, `email`, `password`, `tweet_count`) 
-        VALUES (NULL, ?, ?, ?, ?, ?, '0');");
-        $hasedpass = md5($password);
-        $query->bind_param("sssss", $username, $fname, $lname, $email, $hasedpass);
-        $query->execute();
-        $result = $query->get_result();
-        $response['useradded'] = true;
+    if(isset($response['emailfound']) && isset($response['usernamefound'])){
+        if($response['emailfound'] == false && $response["usernamefound"] == false && isset($_POST['password']) && isset($_POST['fname']) && isset($_POST['lname'])){
+            $query = $mysqli->prepare("INSERT INTO `users` (`id`, `username`, `fname`, `lname`, `email`, `bio`, `password`, `tweet_count`) 
+            VALUES (NULL, ?, ?, ?, ?, 'Biography, edit in profile.', ?, '0');");
+            $hasedpass = md5($password);
+            $query->bind_param("sssss", $username, $fname, $lname, $email, $hasedpass);
+            $query->execute();
+            $result = $query->get_result();
+            $response['useradded'] = true;
+        }
+        $json = json_encode($response);
+        echo $json;
     }
-    $json = json_encode($response);
-    echo $json;
-
-    
 ?>
