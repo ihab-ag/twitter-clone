@@ -40,7 +40,7 @@ tweetBtn.addEventListener("click", e => {
             //tweetInput.value = "";
         //})
     }
-    
+    window.location.href = "./homepage.html";
 })
 
 function sendTweetRequest(url, data){

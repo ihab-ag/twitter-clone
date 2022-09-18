@@ -6,7 +6,7 @@
         FROM `tweets` JOIN users on tweets.users_id = users.id 
         WHERE tweets.users_id 
         IN (SELECT followers.followed_user_id FROM followers WHERE followers.user_id = ?) 
-        OR tweets.users_id = ?");
+        OR tweets.users_id = ? ORDER BY tweets.id DESC");
         $query->bind_param("ii", $_POST['userid'], $_POST['userid']);
         $query->execute();
         $array = $query->get_result();

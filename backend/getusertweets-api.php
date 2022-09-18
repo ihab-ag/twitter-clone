@@ -7,7 +7,7 @@
         //echo $userid;
         $query = $mysqli->prepare("SELECT tweets.id as tweet_id, users_id, tweet_text, picture_url, profile_pic, users.id, username, fname, lname 
                                     FROM `tweets` JOIN users on tweets.users_id = users.id 
-                                    WHERE tweets.users_id = ?");
+                                    WHERE tweets.users_id = ? ORDER BY tweets.id DESC");
         $query->bind_param("i", $userid);
         $query->execute();
         $array = $query->get_result();
