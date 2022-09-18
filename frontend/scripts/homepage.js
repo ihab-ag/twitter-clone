@@ -10,7 +10,7 @@ window.onload=()=>{
     const body=document.getElementsByTagName('body')[0];
     const tweetBtn=document.getElementById('tweetBtn'); 
     const tweetBoxBg=document.querySelector('.tweet-box__bg');
-    const tweetBox=document.querySelector('.tweet-box');
+    const newTweetBtn=document.getElementById('new-tweet-btn');
     const tweetInput =document.getElementById('tweetInput');
     const wordCounter=document.getElementById('wordCounter');
     const userImgLbl=document.getElementById('userImgLbl');
@@ -19,6 +19,8 @@ window.onload=()=>{
     const userImg=document.getElementById('user-img');
     const editBtn=document.getElementById('editBtn');
     const applyBtn=document.getElementById('applyBtn');
+    const navMenu=document.querySelector('.nav-bar .nav-card');
+    const logout=document.getElementById('logout');
     // functions
     // show home
     function showHome() {
@@ -95,10 +97,14 @@ window.onload=()=>{
         if(e.target.className=="tweet-box__bg")
         hideTweetBox();
     }
+    // count words
     tweetInput.onkeyup=()=>{
         wordCounter.innerText=tweetInput.value.length;
         tweetInput.style.color= tweetInput.value.length>280?'red':"#666666";
     }
     editBtn.onclick=()=>onEdit();
     applyBtn.onclick=()=>onApply();
+    // toggle logout menu
+    navMenu.onclick=()=>logout.style.display= logout.style.display==='block'?'none':'block';
+    newTweetBtn.onclick=()=>location.reload();
 }

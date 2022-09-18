@@ -118,6 +118,9 @@ input:focus{
     align-items: center;
     justify-content: space-between;
 }
+.nav-bar .nav-card{
+    cursor:pointer;
+}
 .nav-card .profile-icon{
     width:48px;
     height:48px;
