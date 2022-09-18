@@ -107,7 +107,7 @@ function checkFollowingRequest(url, data, profileFollow, toFollowUserID, toFollo
                 unfollowbtn.addEventListener("click", e => {
                     let data = {"userid": userid, "tofollowuserid": toFollowUserID, "todo": "unfollow"};
                     followUser(url, data);
-                    sendSearchRequest('../backend/search-api.php', {"username": toFollowUserName});
+                    setTimeout(function(){sendSearchRequest('../backend/search-api.php', {"username": toFollowUserName});}, 100);
                 })            
             }
             else{
@@ -118,7 +118,7 @@ function checkFollowingRequest(url, data, profileFollow, toFollowUserID, toFollo
                 followbtn.addEventListener("click", e => {
                     let data = {"userid": userid, "tofollowuserid": toFollowUserID, "todo": "follow"};
                     followUser(url, data);
-                    sendSearchRequest('../backend/search-api.php', {"username": toFollowUserName});
+                    setTimeout(function(){sendSearchRequest('../backend/search-api.php', {"username": toFollowUserName});}, 100);
                 })
             }
 });
