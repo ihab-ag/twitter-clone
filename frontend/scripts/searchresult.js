@@ -100,6 +100,9 @@ function checkFollowingRequest(url, data, stackBtn, toFollowUserID, toFollowUser
     }).then(response => response.json()).then(dataResponse => 
         {
             let url = "../backend/follow-api.php";
+            ////////////////////////////////
+            
+            ////////////////////////////////
             if(dataResponse.following){
                 let unfollowbtn = document.createElement("button");
                 unfollowbtn.classList.add("btn");
@@ -141,27 +144,27 @@ function checkBlockRequest(url, data, stackBtn, toBlockUserID, toBlockUsername){
         body: new URLSearchParams(data),
     }).then(response => response.json()).then(dataResponse => 
         {
-            let url = "../backend/follow-api.php";
+            let url = "../backend/blockuser-api.php";
             if(dataResponse.blocking){
                 
-                let unfollowbtn = document.createElement("button");
-                unfollowbtn.classList.add("btn");
-                unfollowbtn.innerHTML = "Unfollow";
-                stackBtn.appendChild(unfollowbtn);
-                unfollowbtn.addEventListener("click", e => {
-                    let data = {"userid": userid, "tofollowuserid": toBlockUserID, "todo": "unfollow"};
+                let unblockbtn = document.createElement("button");
+                unblockbtn.classList.add("btn", "btn-red");
+                unblockbtn.innerHTML = "Unblock";
+                stackBtn.appendChild(unblockbtn);
+                unblockbtn.addEventListener("click", e => {
+                    let data = {"userid": userid, "toblockuserid": toBlockUserID, "todo": "unblock"};
                     blockUser(url, data);
                     setTimeout(function(){sendSearchRequest('../backend/search-api.php', {"username": toBlockUsername});}, 100);
                 })            
             }
             else{
                 console.log("not blocking");
-                let followbtn = document.createElement("button");
-                followbtn.classList.add("btn");
-                followbtn.innerHTML = "Follow";
-                stackBtn.appendChild(followbtn);
-                followbtn.addEventListener("click", e => {
-                    let data = {"userid": userid, "tofollowuserid": toBlockUserID, "todo": "follow"};
+                let blockbtn = document.createElement("button");
+                blockbtn.classList.add("btn", "btn-red");
+                blockbtn.innerHTML = "Block";
+                stackBtn.appendChild(blockbtn);
+                blockbtn.addEventListener("click", e => {
+                    let data = {"userid": userid, "toblockuserid": toBlockUserID, "todo": "block"};
                     blockUser(url, data);
                     setTimeout(function(){sendSearchRequest('../backend/search-api.php', {"username": toBlockUsername});}, 100);
                 })
