@@ -34,6 +34,7 @@ function LogUserIn(){
         window.location.href = "./homepage.html";
     }
 }
+LogUserIn();
 
 
 login_btn_popup.addEventListener("click", loginPopup);
