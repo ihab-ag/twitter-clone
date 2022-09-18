@@ -31,15 +31,15 @@
                 echo $json;
             }
             else{
-                
                 $json = json_encode($response);
                 echo $json;
+                return;
             }
         }
-        
-        if($result->fetch_assoc()){
-
-        }
+        $json = json_encode($response);
+        echo $json;
+    
     }
+
 
 ?>

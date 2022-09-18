@@ -139,12 +139,16 @@ function sendRegisterRequest(url, data){
 
 function registerResponse(usernamefound, emailfound, added){
     let error_message = '';
+    console.log(usernamefound, emailfound, added);
     if(!usernamefound && !emailfound){
         error_message = "Account created!"
         signupErrorDiv.classList.add("green-div");
         signupErrorDiv.classList.remove("hidden");
         signupErrorDiv.classList.remove("red-div");
         signupErrorDiv.innerHTML = error_message;
+        setTimeout(() => {
+            window.location.href = "./index.html";
+        }, 500);
     }
     else{
         if(usernamefound){
