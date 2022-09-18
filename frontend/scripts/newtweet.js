@@ -8,12 +8,38 @@ tweetBtn.addEventListener("click", e => {
     hasimage = hasimage === true ? 1 : 0;
     console.log(tweet_text, userid, hasimage);
 
+
     const url = "../backend/addtweet-api.php";
-    let data = {"tweet_text": tweet_text,
-                "userid": userid,
-                "hasimage": hasimage};
-    sendTweetRequest(url, data);
-    
+    if(!hasimage){
+        let data = {"tweet_text": tweet_text,
+        "userid": userid,
+        "hasimage": hasimage,
+        };
+        sendTweetRequest(url, data);
+    }
+    else{
+        const fileInput = document.getElementById("img-input");
+
+        //fileInput.addEventListener("change", e => {
+            console.log("enter");
+            let file = fileInput.files[0];
+            let reader = new FileReader();
+
+            reader.addEventListener("load", () => {
+                console.log(reader.result);
+                let imageinbase = reader.result;
+                //split to remove "data:image/png;base64,"
+                let pure64base = imageinbase.split(",");
+                let url = '../backend/addtweet-api.php';
+                let data = {"tweet_text": tweet_text,
+                            "userid": userid,
+                            "hasimage": hasimage,
+                            "picture_64base": pure64base[1]};
+                sendTweetRequest(url, data);
+            })
+            reader.readAsDataURL(file);
+        //})
+    }
 })
 
 function sendTweetRequest(url, data){
@@ -24,3 +50,4 @@ function sendTweetRequest(url, data){
         body: new URLSearchParams(data),
     }).then(response => response.json()).then(dataResponse => {console.log(dataResponse)});
 }
+

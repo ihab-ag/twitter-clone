@@ -11,7 +11,7 @@ function sendTweetsRequest(url, data){
     }).then(response => response.json()).then(dataResponse => {displayTweets(dataResponse);});
 }
 
-sendTweetsRequest(api_url, {"userid" : 1});
+sendTweetsRequest(api_url, {"userid" : userid});
 
 let tweetsShown = [];
 
@@ -79,7 +79,7 @@ function sendTweetsLikeRequest(url, data, tweetContainer, tweet_id){
             likeImage.addEventListener("click", function(){likeTweet(tweet_id, "removelike")
             likeImage.setAttribute('src', 'content/like.png');
             likeDiv.remove();
-            setTimeout(function(){sendTweetsLikeRequest(url, data, tweetContainer, tweet_id)},1000 )});
+            setTimeout(function(){sendTweetsLikeRequest(url, data, tweetContainer, tweet_id)}, 800)});
         }
         else{
             let likeDiv = document.createElement('div');
@@ -91,7 +91,7 @@ function sendTweetsLikeRequest(url, data, tweetContainer, tweet_id){
             likeImage.addEventListener("click", function(){likeTweet(tweet_id, "like");
             likeImage.setAttribute('src', 'content/liked.png');
             likeDiv.remove();
-            setTimeout(function(){sendTweetsLikeRequest(url, data, tweetContainer, tweet_id)},1000 )});
+            setTimeout(function(){sendTweetsLikeRequest(url, data, tweetContainer, tweet_id)}, 800)});
         }
     });
 }
@@ -156,7 +156,7 @@ function likeRequest(url, data){
 }
 
 
-async function test(url, data){
+/*async function test(url, data){
     try {
         const config = {
             method: 'POST',
@@ -209,4 +209,4 @@ const asyncPostCall = async () => {
          } 
     }
 
-asyncPostCall()
+asyncPostCall()*/

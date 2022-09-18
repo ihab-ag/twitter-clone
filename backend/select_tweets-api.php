@@ -2,7 +2,7 @@
 
     include("connection.php");
     if(isset($_POST['userid'])){
-        $query = $mysqli->prepare("SELECT tweets.id as tweet_id, users_id, tweet_text, has_picture, users.id, username, fname, lname 
+        $query = $mysqli->prepare("SELECT tweets.id as tweet_id, users_id, tweet_text, users.id, username, fname, lname 
         FROM `tweets` JOIN users on tweets.users_id = users.id 
         WHERE tweets.users_id 
         IN (SELECT followers.followed_user_id FROM followers WHERE followers.user_id = ?) 
