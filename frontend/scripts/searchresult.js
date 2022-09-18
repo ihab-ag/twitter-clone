@@ -76,15 +76,14 @@ function InstantiateProfileCard(data){
     profileFollow.appendChild(stackBtn);
 
     //CHECK IF FOLLOWING USER
-    url = "../backend/checkfollowing-api.php";
-    data = {'userid': userid, 'tofollowuserid': toFollowUserID};
+    let urlF = "../backend/checkfollowing-api.php";
+    let dataF = {'userid': userid, 'tofollowuserid': toFollowUserID};
+    checkFollowingRequest(urlF, dataF, stackBtn, toFollowUserID, toFollowUserName);
     console.log(data);
-    checkFollowingRequest(url, data, stackBtn, toFollowUserID, toFollowUserName);
-
-    /*let followbtn2 = document.createElement("button");
-    followbtn2.classList.add("btn");
-    followbtn2.innerText = "Block";
-    profileFollow.appendChild(followbtn2);*/
+    let urlB = "../backend/checkblocking-api.php";
+    let dataB = {'userid': userid, 'toblockuserid': toFollowUserID};
+    checkBlockRequest(urlB, dataB, stackBtn, toFollowUserID, toFollowUserName);
+    console.log(data);
 
     //Bio
     let bio = document.createElement("p");
@@ -127,6 +126,50 @@ function checkFollowingRequest(url, data, stackBtn, toFollowUserID, toFollowUser
 }
 
 function followUser(url, data){
+    stringyfiedData = JSON.stringify(data);
+    fetch(url , {
+        method: 'POST',
+        body: new URLSearchParams(data),
+    }).then(response => response.json()).then(dataResponse => {console.log(dataResponse);});
+}
+
+//Same process with block button
+function checkBlockRequest(url, data, stackBtn, toBlockUserID, toBlockUsername){
+    stringyfiedData = JSON.stringify(data);
+	fetch(url , {
+        method: 'POST',
+        body: new URLSearchParams(data),
+    }).then(response => response.json()).then(dataResponse => 
+        {
+            let url = "../backend/follow-api.php";
+            if(dataResponse.blocking){
+                
+                let unfollowbtn = document.createElement("button");
+                unfollowbtn.classList.add("btn");
+                unfollowbtn.innerHTML = "Unfollow";
+                stackBtn.appendChild(unfollowbtn);
+                unfollowbtn.addEventListener("click", e => {
+                    let data = {"userid": userid, "tofollowuserid": toBlockUserID, "todo": "unfollow"};
+                    blockUser(url, data);
+                    setTimeout(function(){sendSearchRequest('../backend/search-api.php', {"username": toBlockUsername});}, 100);
+                })            
+            }
+            else{
+                console.log("not blocking");
+                let followbtn = document.createElement("button");
+                followbtn.classList.add("btn");
+                followbtn.innerHTML = "Follow";
+                stackBtn.appendChild(followbtn);
+                followbtn.addEventListener("click", e => {
+                    let data = {"userid": userid, "tofollowuserid": toBlockUserID, "todo": "follow"};
+                    blockUser(url, data);
+                    setTimeout(function(){sendSearchRequest('../backend/search-api.php', {"username": toBlockUsername});}, 100);
+                })
+            }
+    });
+}
+
+function blockUser(url, data){
     stringyfiedData = JSON.stringify(data);
     fetch(url , {
         method: 'POST',
