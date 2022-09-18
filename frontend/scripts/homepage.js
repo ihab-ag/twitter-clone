@@ -105,6 +105,10 @@ window.onload=()=>{
     editBtn.onclick=()=>onEdit();
     applyBtn.onclick=()=>onApply();
     // toggle logout menu
-    navMenu.onclick=()=>logout.style.display= logout.style.display==='block'?'none':'block';
+    navMenu.onclick=(e)=>{
+        if(e.target.className!='nav-card__menu'){
+            logout.style.display= logout.style.display==='block'?'none':'block';
+        }
+    }
     newTweetBtn.onclick=()=>location.reload();
 }
