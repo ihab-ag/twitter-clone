@@ -20,7 +20,7 @@
     
             if($img){
                 //echo 'worked';
-                $url = './' . $name . ".jpg";
+                $url = '../frontend/content/uploadedimages/' . $name . ".jpg";
                 imagejpeg($img, $url);
                 //query to insert
                 $response['addedimage'] = true;

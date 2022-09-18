@@ -52,13 +52,48 @@ function displayTweets(dataResponse){
         tweetP.innerHTML = dataResponse[i].tweet_text;
         tweetText.appendChild(tweetP);
 
+        //Image
+        if(dataResponse[i].picture_url != 'none'){
+            let tweetwithImgContainer = document.createElement('div');
+            tweetwithImgContainer.classList.add("tweet__withimg");
+            tweetwithImgContainer.appendChild(tweetContainer);
+            tweetsContainer.appendChild(tweetwithImgContainer);
+
+            let tweetImgContainer = document.createElement('div');
+            tweetImgContainer.classList.add("tweet-img", "container");
+            tweetwithImgContainer.appendChild(tweetImgContainer);
+
+            let tweetImg = document.createElement('img');
+            tweetImg.setAttribute('src', dataResponse[i].picture_url);
+            tweetImgContainer.appendChild(tweetImg);
+        }
+
+
         //Like Icon
         url = '../backend/checklike-api.php';
         data = {"userid": userid, "tweet_id": tweet_id};
-        //let likeDiv = document.createElement('div');
-        //likeDiv.classList.add("like-icon");
-        //likeDiv.setAttribute("id", i);
         sendTweetsLikeRequest(url, data, tweetContainer, tweet_id);
+
+        /*            <div class="tweet__withimg">
+                <div class="tweet container" id="tweet-container">
+                    <div class="tweet__content">
+                        <div class="profile-icon">
+                            <img src="content/profile-mock.jpg" alt="profile img">
+                        </div>
+                        <div class="tweet__texts">
+                            <p class="bold medium">Name <span class="small light light-grey">@usernsme</span></p>
+                            <p class="medium normal">Something randomnbeing said on twitter</p>
+                        </div>
+                    </div>
+                    <div class="like-icon">
+                        <img src="content/like.png" alt="like">
+                    </div>
+                </div>
+                <div class="tweet-img container">
+                    <img src="content/profile-mock.jpg" alt="tweet img">
+                </div>
+            </div>
+        */
     }
 }
 
