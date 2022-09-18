@@ -24,7 +24,12 @@ const fname_signup = document.getElementById("fname-signup");
 const lname_signup = document.getElementById("lname-signup");
 const email_signup = document.getElementById("email-signup");
 const signupErrorDiv = document.getElementById("error-signup");
+const logout = document.getElementById("logout");
 
+logout.addEventListener("click", e => {
+    window.localStorage.removeItem('loggedin');
+    LogUserIn();
+})
 //Other documents
 
 
