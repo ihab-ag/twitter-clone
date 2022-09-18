@@ -3,10 +3,12 @@ const search_results_div = document.getElementById("search-results");
 const loggedinUsername = JSON.parse(localStorage.getItem("loggedin")).username;
 const searchMainContainer = document.getElementById("search-results");
 userid = JSON.parse(localStorage.getItem("loggedin")).userid;
+console.log(userid);
 
 document.addEventListener("keyup", function(event) {
     if (event.key === 'Enter' && username_search.value != '') {
-        sendSearchRequest('../backend/search-api.php', {username: username_search.value});
+        sendSearchRequest('../backend/search-api.php', {username: username_search.value,
+                                                        'userid': userid});
     }
 });
 
@@ -20,6 +22,7 @@ function sendSearchRequest(url, data){
 }
 
 function checkUser(data){
+    console.log(data);
     if(data[0]){
         console.log("found", data[0].username);
         InstantiateProfileCard(data);
@@ -111,7 +114,8 @@ function checkFollowingRequest(url, data, stackBtn, toFollowUserID, toFollowUser
                 unfollowbtn.addEventListener("click", e => {
                     let data = {"userid": userid, "tofollowuserid": toFollowUserID, "todo": "unfollow"};
                     followUser(url, data);
-                    setTimeout(function(){sendSearchRequest('../backend/search-api.php', {"username": toFollowUserName});}, 100);
+                    setTimeout(function(){sendSearchRequest('../backend/search-api.php', {"username": toFollowUserName,
+                                                                                            "userid": userid});}, 100);
                 })            
             }
             else if(!isblocking){
@@ -122,7 +126,8 @@ function checkFollowingRequest(url, data, stackBtn, toFollowUserID, toFollowUser
                 followbtn.addEventListener("click", e => {
                     let data = {"userid": userid, "tofollowuserid": toFollowUserID, "todo": "follow"};
                     followUser(url, data);
-                    setTimeout(function(){sendSearchRequest('../backend/search-api.php', {"username": toFollowUserName});}, 100);
+                    setTimeout(function(){sendSearchRequest('../backend/search-api.php', {"username": toFollowUserName,
+                                                                                            "userid": userid});}, 100);
                 })
             }
 });
@@ -158,7 +163,8 @@ function checkBlockRequest(url, data, stackBtn, toBlockUserID, toBlockUsername){
                 unblockbtn.addEventListener("click", e => {
                     let data = {"userid": userid, "toblockuserid": toBlockUserID, "todo": "unblock"};
                     blockUser(url, data);
-                    setTimeout(function(){sendSearchRequest('../backend/search-api.php', {"username": toBlockUsername});}, 100);
+                    setTimeout(function(){sendSearchRequest('../backend/search-api.php', {"username": toBlockUsername,
+                                                                                            "userid": userid});}, 100);
                 })            
             }
             else{
@@ -175,7 +181,8 @@ function checkBlockRequest(url, data, stackBtn, toBlockUserID, toBlockUsername){
                 blockbtn.addEventListener("click", e => {
                     let data = {"userid": userid, "toblockuserid": toBlockUserID, "todo": "block"};
                     blockUser(url, data);
-                    setTimeout(function(){sendSearchRequest('../backend/search-api.php', {"username": toBlockUsername});}, 100);
+                    setTimeout(function(){sendSearchRequest('../backend/search-api.php', {"username": toBlockUsername,
+                                                                                          "userid": userid});}, 100);
                 })
             }
     });

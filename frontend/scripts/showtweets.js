@@ -128,7 +128,7 @@ function main(){
                 likeImage.addEventListener("click", function(){likeTweet(tweet_id, "removelike")
                 likeImage.setAttribute('src', 'content/like.png');
                 likeDiv.remove();
-                setTimeout(function(){sendTweetsLikeRequest(url, data, tweetContainer, tweet_id)}, 800)});
+                setTimeout(function(){sendTweetsLikeRequest(url, data, tweetContainer, tweet_id)}, 100)});
             }
             else{
                 let likeDiv = document.createElement('div');
@@ -140,7 +140,7 @@ function main(){
                 likeImage.addEventListener("click", function(){likeTweet(tweet_id, "like");
                 likeImage.setAttribute('src', 'content/liked.png');
                 likeDiv.remove();
-                setTimeout(function(){sendTweetsLikeRequest(url, data, tweetContainer, tweet_id)}, 800)});
+                setTimeout(function(){sendTweetsLikeRequest(url, data, tweetContainer, tweet_id)}, 100)});
             }
         });
     }

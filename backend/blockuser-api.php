@@ -16,12 +16,17 @@
             $query->bind_param("ii", $userid, $toblockuserid);
             $query->execute();
             $result = $query->get_result();
+            $query = $mysqli->prepare("DELETE FROM `followers` WHERE user_id = ? AND followed_user_id = ?");
+            $query->bind_param("ii", $toblockuserid, $userid);
+            $query->execute();
+            $result = $query->get_result();
         }
         else if($todo == "unblock"){
             $query = $mysqli->prepare("DELETE FROM `blocked_users` WHERE userid = ? AND blockinguserid = ?");
             $query->bind_param("ii", $userid, $toblockuserid);
             $query->execute();
             $result = $query->get_result();
+
             $response['nowunblocked'] = true;
         }
     }
