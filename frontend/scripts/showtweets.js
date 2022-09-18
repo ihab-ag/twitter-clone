@@ -57,7 +57,14 @@ function main(isProfile){
             tweetContent.appendChild(tweetPicture);
     
             let tweetImg = document.createElement('img');
-            tweetImg.setAttribute("src", dataResponse[i].profile_pic);
+            if(dataResponse[i].profile_pic != 'none'){
+                tweetImg.setAttribute("src", dataResponse[i].profile_pic);
+            }
+            else
+            {
+                tweetImg.setAttribute("src", "content/profile-mock.jpg");
+            }
+            
             tweetPicture.appendChild(tweetImg);
     
             //Tweet text
@@ -67,7 +74,7 @@ function main(isProfile){
     
             let tweetN = document.createElement('p');
             tweetN.classList.add("medium", "bold");
-            tweetN.innerHTML =  dataResponse[i].fname + " " + dataResponse[i].lname + " ";
+            tweetN.innerHTML =  dataResponse[i].fname + " ";
             tweetText.appendChild(tweetN);
 
             let tweetUser = document.createElement('span');

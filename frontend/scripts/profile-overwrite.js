@@ -50,7 +50,7 @@ applyBtn.addEventListener("click", e => {
             //tweetInput.value = "";
         //})
     }
-    
+    window.location.href = "./homepage.html";
 })
 
 function sendEditRequest(url, data){
@@ -69,10 +69,14 @@ function sendUserRequest(url, data){
         method: 'POST',
         body: new URLSearchParams(data),
     }).then(response => response.json()).then(dataResponse => {
-        let userImg = document.getElementById('user-profile-pic'); 
+        let userImg = document.getElementById('user-profile-pic');
+        let userImg2 = document.getElementById('mainprofilepic'); 
+        let userImg3 = document.getElementById('logoutpic');  
         nameInput.value = dataResponse[0].fname;
         if(dataResponse[0].profile_pic != 'none'){
             userImg.setAttribute('src', dataResponse[0].profile_pic);
+            userImg2.setAttribute('src', dataResponse[0].profile_pic);
+            userImg3.setAttribute('src', dataResponse[0].profile_pic);
         }
         bioInput.value = dataResponse[0].bio;
     });

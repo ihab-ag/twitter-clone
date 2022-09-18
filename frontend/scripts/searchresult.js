@@ -55,7 +55,7 @@ function InstantiateProfileCard(data){
     profileIcon.classList.add("profile-icon");
     navCard.appendChild(profileIcon);
     let image = document.createElement('img');
-    image.setAttribute('src', "content/profile-mock.jpg");
+    image.setAttribute('src', data[0].profile_pic);
     image.setAttribute('alt', "profile");
     profileIcon.appendChild(image);
 
@@ -66,7 +66,7 @@ function InstantiateProfileCard(data){
     navCard.appendChild(stack);
     let p1 = document.createElement('p');
     p1.classList.add("large", "bold");
-    p1.innerHTML = data[0].fname + data[0].lname;
+    p1.innerHTML = data[0].fname;
     let p2 = document.createElement('p');
     p2.classList.add("medium", "light", "grey");
     p2.innerHTML = "@" + toFollowUserName;
